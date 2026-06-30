@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="100 30 800 600" role="img" aria-label="Illustration of an Adobe Media Encoder encoding queue with codec badges and progress bars, a source media clip, and a UXP automation cue">
+  <defs>
+    <linearGradient id="window" x1="250" y1="110" x2="850" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#241B3F"/>
+      <stop offset="1" stop-color="#1A1330"/>
+    </linearGradient>
+    <linearGradient id="clip" x1="150" y1="330" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1EEF9"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="26" flood-color="#0B0720" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background: one clean concentric oval glow, centered behind the cards -->
+  <ellipse cx="560" cy="310" rx="330" ry="300" fill="#9B7CFF" opacity="0.14"/>
+  <ellipse cx="560" cy="310" rx="235" ry="215" fill="#B9A6FF" opacity="0.16"/>
+
+  <!-- Encoding Queue window -->
+  <g filter="url(#soft)">
+    <rect x="250" y="120" width="600" height="380" rx="22" fill="url(#window)" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="1.5"/>
+  </g>
+
+  <!-- Title bar -->
+  <circle cx="286" cy="158" r="7" fill="#FF6058"/>
+  <circle cx="310" cy="158" r="7" fill="#FFBD2E"/>
+  <circle cx="334" cy="158" r="7" fill="#28C840"/>
+  <text x="372" y="164" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#C7BFE6">Encoding Queue</text>
+
+  <!-- UXP automation chip -->
+  <rect x="600" y="144" width="120" height="28" rx="14" fill="#8A5CF6" opacity="0.18"/>
+  <text x="660" y="163" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#C9B8FF" text-anchor="middle">{ } UXP script</text>
+
+  <!-- Render button -->
+  <circle cx="812" cy="158" r="18" fill="#2ECC71"/>
+  <polygon points="806,150 806,166 820,158" fill="#FFFFFF"/>
+
+  <line x1="250" y1="190" x2="850" y2="190" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="2"/>
+
+  <!-- Row 1: H.264, done -->
+  <rect x="286" y="216" width="74" height="30" rx="7" fill="#8A5CF6"/>
+  <text x="323" y="236" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">H.264</text>
+  <rect x="380" y="218" width="150" height="9" rx="4.5" fill="#3A3358"/>
+  <rect x="470" y="237" width="300" height="8" rx="4" fill="#332C52"/>
+  <rect x="470" y="237" width="300" height="8" rx="4" fill="#36C5A8"/>
+  <polyline points="794,233 802,241 816,227" fill="none" stroke="#36C5A8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Row 2: ProRes, encoding 64% -->
+  <rect x="286" y="286" width="74" height="30" rx="7" fill="#36C5A8"/>
+  <text x="323" y="306" font-family="Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0E2E27" text-anchor="middle">ProRes</text>
+  <rect x="380" y="288" width="120" height="9" rx="4.5" fill="#3A3358"/>
+  <rect x="470" y="307" width="300" height="8" rx="4" fill="#332C52"/>
+  <rect x="470" y="307" width="192" height="8" rx="4" fill="#8A5CF6"/>
+  <text x="812" y="312" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#C7BFE6" text-anchor="end">64%</text>
+
+  <!-- Row 3: HEVC, queued -->
+  <rect x="286" y="356" width="74" height="30" rx="7" fill="#FFC24B"/>
+  <text x="323" y="376" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#3A2A00" text-anchor="middle">HEVC</text>
+  <rect x="380" y="358" width="160" height="9" rx="4.5" fill="#3A3358"/>
+  <rect x="470" y="377" width="300" height="8" rx="4" fill="#332C52"/>
+  <text x="812" y="382" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#8E86AE" text-anchor="end">Queued</text>
+
+  <!-- Row 4: MP4, queued -->
+  <rect x="286" y="426" width="74" height="30" rx="7" fill="#4F8DF7"/>
+  <text x="323" y="446" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">MP4</text>
+  <rect x="380" y="428" width="130" height="9" rx="4.5" fill="#3A3358"/>
+  <rect x="470" y="447" width="300" height="8" rx="4" fill="#332C52"/>
+  <text x="812" y="452" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#8E86AE" text-anchor="end">Queued</text>
+
+  <!-- Source media clip (front, lower-left) -->
+  <g filter="url(#soft)">
+    <rect x="140" y="338" width="252" height="168" rx="16" fill="url(#clip)"/>
+  </g>
+  <!-- preview area -->
+  <rect x="156" y="354" width="220" height="98" rx="9" fill="#221A3C"/>
+  <!-- sprocket holes (film cue) -->
+  <g fill="#3A3358">
+    <rect x="164" y="360" width="10" height="7" rx="2"/>
+    <rect x="186" y="360" width="10" height="7" rx="2"/>
+    <rect x="208" y="360" width="10" height="7" rx="2"/>
+    <rect x="230" y="360" width="10" height="7" rx="2"/>
+    <rect x="252" y="360" width="10" height="7" rx="2"/>
+    <rect x="274" y="360" width="10" height="7" rx="2"/>
+    <rect x="296" y="360" width="10" height="7" rx="2"/>
+    <rect x="318" y="360" width="10" height="7" rx="2"/>
+    <rect x="340" y="360" width="10" height="7" rx="2"/>
+  </g>
+  <!-- play button -->
+  <circle cx="266" cy="408" r="22" fill="#2ECC71"/>
+  <polygon points="259,398 259,418 277,408" fill="#FFFFFF"/>
+  <!-- filename + meta bars -->
+  <rect x="156" y="466" width="150" height="11" rx="5.5" fill="#C9C2E0"/>
+  <rect x="156" y="485" width="96" height="9" rx="4.5" fill="#E4DFF1"/>
+</svg>

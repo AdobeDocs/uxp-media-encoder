@@ -1,15 +1,17 @@
 ---
-title: Overview - Analytics
-description: This is the overview page of Analytics
+title: UXP for Adobe Media Encoder
+description: "Build plugins and automation for Adobe Media Encoder with UXP: create panels, automate the encoding queue, and script batch workflows."
 contributors:
-  - https://github.com/icaraps 
+  - https://github.com/karan0207
 ---
 
-<Superhero slots="heading, text"/>
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="rgb(64, 34, 138)"/>
 
-# Analytics API
+# Automate Adobe Media Encoder with UXP
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eleifend ornare purus, vel dapibus augue suscipit in. 
+Build plugins in HTML, CSS, and JavaScript that run inside Media Encoder, discover presets, and drive the encoding queue. Turn repetitive exports into automated, one-click workflows, the modern successor to ExtendScript.
+
+![Build UXP plugins and automation for Adobe Media Encoder](images/hero.svg)
 
 <Resources slots="heading, links"/>
 
