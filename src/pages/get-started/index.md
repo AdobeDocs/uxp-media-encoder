@@ -62,4 +62,4 @@ The terms used across these docs: plugins, panels, scripts, manifests, and how t
 
 ## Coming from ExtendScript?
 
-If you have automated Media Encoder before, UXP is the modern path. See [Migrate from CEP and ExtendScript](../migrating/index.md) for what carries over and what changed.
+If you have automated Media Encoder before, UXP is the modern path. See [Migrate from CEP and ExtendScript](../plugins/migrating/index.md) for what carries over and what changed.
