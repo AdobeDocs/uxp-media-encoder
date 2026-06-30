@@ -17,8 +17,10 @@ Build plugins in HTML, CSS, and JavaScript that run inside Media Encoder, discov
 
 #### Resources
 
-* [Quickstart Guide](https://developer.adobe.com)
-* [Analytics Github Repo](https://github.com/AdobeDocs/dev-site)
+* [Get Started](get-started/index.md)
+* [Plugins](plugins/index.md)
+* [Migrate from CEP](plugins/migrating/index.md)
+* [Developer Forums](https://forums.creativeclouddeveloper.com/)
 
 ## Overview
 
@@ -72,13 +74,3 @@ File system, networking, storage, and Spectrum UI components.
 [Media Encoder API](media-encoder-api/index.md)
 
 The encoding queue, presets, jobs, and scripting automation.
-
-## Resources
-
-APIs and samples when you need them.
-
-<DiscoverBlock slots="link, text"/>
-
-[API Playground](api/index.md)
-
-Try UXP and Media Encoder APIs interactively.
