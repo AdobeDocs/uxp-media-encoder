@@ -41,19 +41,19 @@ Set up your environment and run your first automation inside Media Encoder.
 
 <DiscoverBlock slots="link, text"/>
 
-[Get Started](guides/getting-started/index.md)
+[Get Started](get-started/index.md)
 
 Set up your environment and load a panel with the UXP Developer Tool.
 
 <DiscoverBlock slots="link, text"/>
 
-[Plugins](guides/index.md)
+[Plugins](plugins/index.md)
 
 Manifests, entry points, panels, and recipes for common encoding tasks.
 
 <DiscoverBlock slots="link, text"/>
 
-[Migrate from CEP](guides/migrating/index.md)
+[Migrate from CEP](plugins/migrating/index.md)
 
 What carries over from ExtendScript and what changed.
 
