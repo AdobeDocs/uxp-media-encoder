@@ -9,8 +9,8 @@
     - [Media Encoder API](media-encoder-api/index.md)
 
 - subPages:
-    - [Get Started](guides/index.md) 
-        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md) 
-        - [Dummy OAuth using POSTMAN](guides/dummy_using_postman/index.md) 
-    - [Metrics API](guides/dummy_metrics_api/index.md) 
-    - [Migrating](guides/migrating/index.md) 
+    - [Overview](guides/getting-started/index.md)
+    - Essentials header
+    - [Developer Tools](guides/getting-started/developer-tools/index.md)
+    - [Tech Stack Foundations](guides/getting-started/tech-stack/index.md)
+    - [Nomenclature](guides/getting-started/nomenclature/index.md)
