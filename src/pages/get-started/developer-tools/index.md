@@ -41,11 +41,3 @@ UDT is required for development. Start Media Encoder before you load a plugin, a
 * Update UDT to the latest version, then start Media Encoder before refreshing UDT.
 * Confirm your plugin's `manifest.json` sets the host app to Media Encoder.
 * If a manifest change is not applied, unload the plugin in UDT and load it again.
-
-## Next
-
-<DiscoverBlock slots="link, text"/>
-
-[Tech Stack Foundations](../tech-stack/index.md)
-
-Understand the runtime and web technologies your plugin uses.
