@@ -37,12 +37,4 @@ Because both use one engine, the code, libraries, and patterns you learn carry a
 
 ## What is and is not available
 
-UXP supports a focused subset of web platform features rather than everything a browser offers. When in doubt, check the [UXP API reference](../../../uxp-api/index.md) for the exact elements, styles, and modules that are supported, instead of assuming a browser API exists.
-
-## Next
-
-<DiscoverBlock slots="link, text"/>
-
-[Nomenclature](../nomenclature/index.md)
-
-Learn the terms these docs use and how they map to CEP and ExtendScript.
+UXP supports a focused subset of web platform features rather than everything a browser offers. When in doubt, check the [UXP API reference](../../uxp-api/index.md) for the exact elements, styles, and modules that are supported, instead of assuming a browser API exists.
