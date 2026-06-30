@@ -2,12 +2,11 @@
     - /media-encoder/uxp/
 
 - pages:
-    - [Analytics](index.md)
-    - [Guides](guides/index.md)
-    - API Reference
-        - [Reference v2.0](api/index.md)
-        - [Reference v1.4](api/1-4.md)
-    - [Support](support/index.md)
+    - [UXP for Media Encoder](index.md)
+    - [Get Started](guides/getting-started/index.md)
+    - [Plugins](guides/index.md)
+    - [UXP API](uxp-api/index.md)
+    - [Media Encoder API](media-encoder-api/index.md)
 
 - subPages:
     - [Get Started](guides/index.md) 
