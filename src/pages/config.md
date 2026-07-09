@@ -2,22 +2,15 @@
     - /media-encoder/uxp/
 
 - pages:
-    - [Analytics](index.md)
-    - [Guides](guides/index.md)
-    - API Reference
-        - [Reference v2.0](api/index.md)
-        - [Reference v1.4](api/1-4.md)
-    - [Support](support/index.md)
+    - [UXP for Media Encoder](index.md)
+    - [Get Started](get-started/index.md)
+    - [Plugins](plugins/index.md)
+    - [UXP API](uxp-api/index.md)
+    - [Media Encoder API](media-encoder-api/index.md)
 
 - subPages:
-    - [Get Started](guides/index.md) 
-        - [Dummy an OAuth Client](guides/dummy_oauth_client/index.md) 
-        - [Dummy OAuth using POSTMAN](guides/dummy_using_postman/index.md) 
-    - [Metrics API](guides/dummy_metrics_api/index.md) 
-    - [Migrating](guides/migrating/index.md) 
-    - [Overview](support/index.md) 
-        - [Help](support/index.md) 
-        - [FAQ](support/FAQ/index.md) 
-        - [How to contribute](support/contribute/index.md) 
-    - [Community](support/community/index.md) 
-        - [Information](support/community/index.md) 
+    - [Overview](get-started/index.md)
+    - Essentials header
+    - [Developer Tools](get-started/developer-tools/index.md)
+    - [Tech Stack Foundations](get-started/tech-stack/index.md)
+    - [Nomenclature](get-started/nomenclature/index.md)
