@@ -7,8 +7,7 @@ keywords:
   - click
   - addEventListener
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # HTML Events and Listeners
@@ -19,11 +18,11 @@ UXP supports standard HTML events for handling user interactions like clicks, in
 
 ## Prerequisites
 
-Before you begin, make sure your development environment uses the following versions:
+<InlineAlert variant="info" slots="heading, text"/>
 
-- **Media Encoder v26.5** or higher
-- **UDT v2.2** or higher
-- **Manifest version v5** or higher
+Placeholder — versions to be confirmed
+
+Minimum supported versions for Media Encoder, the UXP Developer Tool, and the manifest schema will be added here once confirmed by the product team.
 
 ## Example: JavaScript Event Listeners (Recommended)
 

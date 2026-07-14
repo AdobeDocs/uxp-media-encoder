@@ -11,7 +11,7 @@ keywords:
 title: TypeScript Support
 description: Learn about the TypeScript support in UXP and Media Encoder
 contributors:
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # TypeScript Support
@@ -39,6 +39,12 @@ Complete TypeScript type definitions for all Media Encoder DOM APIs are availabl
 - Constants and enums (`JobStatus`, `OutputFormat`, etc.)
 - Complete method signatures with parameter and return types
 - JSDoc comments with descriptions for every API
+
+<InlineAlert variant="info" slots="heading, text" />
+
+Illustrative examples
+
+The package name and the class/method names used throughout this page (`Queue`, `Job`, `getActiveJob()`, and similar) are illustrative placeholders. Check the [Media Encoder API reference](../../../media-encoder-api/index.md) for the finalized package and API surface.
 
 You can install this package through `npm` or your preferred package manager of choice, for example:
 ```sh

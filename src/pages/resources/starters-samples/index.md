@@ -8,8 +8,7 @@ keywords:
   - UDT templates
   - example plugins
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Starters and samples
@@ -25,11 +24,15 @@ When building UXP plugins for Media Encoder, you don't need to start from scratc
 
 ## GitHub repository
 
-You can find a collection of samples and starter templates in the official repository:
+<InlineAlert variant="info" slots="heading, text" />
+
+Placeholder — repository pending
+
+A public samples repository is planned but not yet published. The link and contents below are illustrative and will be confirmed by the product team before this page goes live.
 
 [UXP Media Encoder Samples](https://github.com/AdobeDocs/uxp-media-encoder-samples)
 
-This repository includes:
+This repository is expected to include:
 
 - Working plugin examples for common tasks
 - Best practices for plugin architecture
@@ -53,7 +56,13 @@ To use a template, select it when running the `create` command in UDT. Learn mor
 
 ## Hybrid Plugin SDK
 
-If you're building a [Hybrid Plugin](../../plugins/index.md) that combines JavaScript with native C++ code, download the **UXP Hybrid Plugin SDK** from the [Adobe Developer Console](https://developer.adobe.com/console). The SDK includes:
+<InlineAlert variant="info" slots="heading, text" />
+
+Placeholder — availability to be confirmed
+
+Whether Hybrid Plugins (JavaScript combined with native C++ code) are supported for Media Encoder, and where the SDK can be downloaded, is still to be confirmed with the product team. The description below is illustrative.
+
+If you're building a [Hybrid Plugin](../../plugins/index.md) that combines JavaScript with native C++ code, download the **UXP Hybrid Plugin SDK** from the [Adobe Developer Console](https://developer.adobe.com/console). The SDK is expected to include:
 
 - C++ headers and API definitions for building native addons (`.uxpaddon` files)
 - A `template-dev` project with source code to use as a starting point

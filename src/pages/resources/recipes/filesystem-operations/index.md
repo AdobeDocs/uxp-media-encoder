@@ -8,8 +8,7 @@ keywords:
   - file permissions
   - sandbox
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Filesystem Operations
@@ -18,11 +17,11 @@ UXP provides powerful APIs for reading, writing, creating, and deleting files. T
 
 ## System requirements
 
-Please make make sure your development environment uses the following **minimum versions** to avoid compatibility issues:
+<InlineAlert variant="info" slots="heading, text"/>
 
-- **Media Encoder v26.5**
-- **UDT v2.2**
-- **Manifest v5**
+Placeholder — versions to be confirmed
+
+Minimum supported versions for Media Encoder, the UXP Developer Tool, and the manifest schema will be added here once confirmed by the product team.
 
 ## Understand File System Access
 

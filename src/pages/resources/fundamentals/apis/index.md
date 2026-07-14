@@ -7,8 +7,7 @@ keywords:
   - DOM APIs
   - Media Encoder APIs
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Understanding UXP APIs
@@ -75,6 +74,12 @@ Media Encoder APIs, also interchangeably called **DOM APIs** (Document Object Mo
 - **Apply presets** — assign encoding presets and format settings to jobs
 - **Export content** — configure and trigger exports
 
+<InlineAlert variant="info" slots="heading, text" />
+
+Illustrative examples
+
+The class and method names used in the examples on this page (`Queue`, `Job`, `getActiveJob()`, and similar) are illustrative placeholders. Refer to the [Media Encoder API reference](../../../media-encoder-api/index.md) for the finalized API surface.
+
 The entry point to Media Encoder APIs is the `app` object, that you `require()` from the `"mediaencoder"` module.
 
 ```javascript
@@ -136,16 +141,16 @@ Both UXP and Media Encoder APIs are actively evolving, with new capabilities add
 
 ### Host Application and UXP
 
-- **Media Encoder version** (v26.5): determines which Media Encoder DOM APIs are available.
-- **UXP version** (v8.1): determines which UXP Core APIs are available.
+- **Media Encoder version**: determines which Media Encoder DOM APIs are available.
+- **UXP version**: determines which UXP Core APIs are available.
 
-Each Media Encoder release integrates a specific UXP version. For example, Media Encoder v26.5 includes UXP v8.1.
+Each Media Encoder release integrates a specific UXP version—for example, a given Media Encoder release ships with a corresponding UXP release.
 
 <InlineAlert variant="info" slots="heading, text, text2" />
 
 Handling Version Mismatches
 
-If your plugin relies on an API introduced in UXP v8.2, but the user is running Media Encoder v26.5 (which only includes UXP v8.1), it will throw errors and fail to run. The same applies if your plugin depends on APIs added in Media Encoder v26.6 but the user is still on v26.5.
+If your plugin relies on a UXP API introduced in a UXP release newer than the one bundled with the user's Media Encoder version, it will throw errors and fail to run. The same applies if your plugin depends on a Media Encoder DOM API added in a later Media Encoder release than the one the user has installed.
 
 To avoid compatibility issues, make sure to target APIs common to both versions, or implement fallback logic for older releases when possible.
 
@@ -164,9 +169,9 @@ If you only see the host application version (as in the case of Photoshop in the
 #### 2. Programmatically in your plugin
 
 ```javascript
-const { host, version } = require("uxp");
-console.log(`Media Encoder ${host.version}`); // Media Encoder 26.5.0
-console.log(`UXP ${versions.uxp}`);          // UXP uxp-8.1.0-local
+const { host, versions } = require("uxp");
+console.log(`Media Encoder ${host.version}`); // e.g. Media Encoder 26.x.x
+console.log(`UXP ${versions.uxp}`);           // e.g. UXP uxp-8.x.x-local
 ```
 
 See the [host info recipe](../../recipes/host-info/index.md) for a complete example.
