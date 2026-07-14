@@ -9,8 +9,7 @@ keywords:
   - Contribute
   - Migration guides
 contributors:
-  - https://github.com/arsridhar1
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Resources
@@ -26,6 +25,8 @@ Prerequisites
 If you haven't already, we recommend you to start by reading the [Overview](../get-started/index.md) and [Getting Started](../plugins/index.md) guides. We will assume you are already familiar with the UXP Developer Tool (you have it [installed](../get-started/developer-tools/index.md#uxp-developer-tool-udt) and know [the basic workflow](../plugins/index.md)), and have a basic understanding of the [Concepts](../plugins/index.md).
 
 ## Content overview
+
+Explore the following sections to go deeper into UXP plugin development.
 
 <DiscoverBlock slots="link, text"/>
 

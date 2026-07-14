@@ -11,7 +11,7 @@ keywords:
 title: ESLint Support
 description: Learn how to use ESLint and the Media Encoder plugin to catch API mistakes while you build UXP plugins
 contributors:
-  - https://github.com/camlegleiter
+  - https://github.com/kasivn
 ---
 
 # ESLint Support
@@ -22,7 +22,13 @@ Learn how to use ESLint with UXP plugins for Media Encoder.
 
 [ESLint](https://eslint.org/) checks your source for common problems before you run or ship a plugin. That includes general JavaScript issues (undefined variables, suspicious patterns, and so on) and, when you add shared configurations, team-wide style and quality rules.
 
-For Media Encoder's UXP DOM APIs, many mistakes only show up at runtime: for example calling action-creation methods outside the host's locked-access or transaction blocks, awaiting async work inside those callbacks, or letting action objects escape their lock scope. The [`@adobe/eslint-plugin-mediaencoder`](https://www.npmjs.com/package/@adobe/eslint-plugin-mediaencoder) package adds rules aimed at those patterns so you can catch them in the editor or in CI.
+<InlineAlert variant="info" slots="heading, text" />
+
+Illustrative examples
+
+The package name, rule names, and specific patterns described below (locked-access blocks, `create*Action()`, and similar) are illustrative placeholders pending confirmation from the Media Encoder engineering team. The general ESLint setup and workflow described on this page apply regardless of the final rule set.
+
+For Media Encoder's UXP DOM APIs, many mistakes only show up at runtime—for example, calling API methods outside the required scope or context, awaiting async work where it isn't supported, or letting objects escape their intended lifecycle. A dedicated ESLint plugin for Media Encoder is expected to add rules aimed at those patterns so you can catch them in the editor or in CI.
 
 The plugin has two tiers:
 

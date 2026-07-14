@@ -15,8 +15,7 @@ keywords:
   - JavaScript modules
   - network operations
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Recipes

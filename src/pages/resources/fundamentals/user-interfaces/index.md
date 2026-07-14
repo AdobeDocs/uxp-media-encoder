@@ -11,8 +11,7 @@ keywords:
 title: Building User Interfaces in UXP
 description: Learn about the three ways to create user interfaces in UXP plugins
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # User Interfaces
@@ -97,7 +96,7 @@ npm install @spectrum-web-components/textfield@0.37.0
 
 Version Requirement
 
-For Media Encoder plugins, **all Spectrum Web Components must be locked to version 0.37.0** for the time being. This ensures compatibility with the current UXP version.
+For Media Encoder plugins, **all Spectrum Web Components must be locked to a single compatible version** for the time being, to ensure compatibility with the current UXP version. The `0.37.0` version shown below is illustrative—check the release notes for the currently supported version before pinning your dependencies.
 
 Then import and use them in your JavaScript:
 

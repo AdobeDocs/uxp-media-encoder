@@ -7,8 +7,7 @@ keywords:
   - module.exports
   - code organization
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # JavaScript Modules

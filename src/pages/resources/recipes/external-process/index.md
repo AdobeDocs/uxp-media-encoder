@@ -9,8 +9,7 @@ keywords:
   - URL schemes
   - launch applications
 contributors:
-  - https://github.com/padmkris123
-  - https://github.com/undavide
+  - https://github.com/kasivn
 ---
 
 # Launch External Processes
@@ -21,11 +20,11 @@ UXP provides the [`shell` API](../../../uxp-api/index.md) to let your plugin int
 
 ## System requirements
 
-Please make make sure your development environment uses the following **minimum versions** to avoid compatibility issues:
+<InlineAlert variant="info" slots="heading, text"/>
 
-- **Media Encoder v26.5**
-- **UDT v2.2**
-- **Manifest v5**
+Placeholder — versions to be confirmed
+
+Minimum supported versions for Media Encoder, the UXP Developer Tool, and the manifest schema will be added here once confirmed by the product team.
 
 ## Launch Process Security
 
