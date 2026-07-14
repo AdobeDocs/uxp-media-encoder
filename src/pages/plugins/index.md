@@ -38,7 +38,7 @@ Open UDT and click **Create Plugin**.
 
 A dialog opens where you set the plugin's details. Point it at Media Encoder as the host application:
 
-![The UDT Create Plugin dialog with fields for name, host application, and template](../images/udt-create-plugin.png)
+![The UDT Create Plugin dialog with fields for name, host application, and template](../images/select-host.png)
 
 | Field | Value |
 | --- | --- |
@@ -54,26 +54,25 @@ This tutorial uses the `ame-quick-starter` template, a plain HTML and JavaScript
 - `react-quick-starter` : a React-based panel
 - `webview-quick-starter` : loads a web view
 
-![Choosing Adobe Media Encoder as the host application in the dialog](../images/select-host.png)
-
 Click **Select Folder** and choose where to save the plugin. UDT scaffolds a project named after the Plugin ID. Inside, you'll find a handful of files:
 
-```text
-ame-demo/
-├── icons/            Icons shown for the plugin
-├── index.html        The panel's UI
-├── main.js           The panel's logic
-├── manifest.json     Plugin configuration (name, host app, entry points)
-└── README.md         Notes about the plugin
-```
+| File | What it's for |
+| --- | --- |
+| `manifest.json` | Plugin configuration: name, host app, and entry points |
+| `index.html` | The panel's UI |
+| `main.js` | The panel's logic |
+| `icons/` | Icons shown for the plugin |
+| `README.md` | Notes about the plugin |
 
 ## 2. Load it into Media Encoder
 
 Start Media Encoder and wait until it's fully open, then leave it running. Back in UDT, your plugin appears in the list.
 
-In your plugin's row, click **Load** (or **Load & Watch** to also reload automatically on every save). The panel opens in Media Encoder.
+In your plugin's row, click **Load** (or **Load & Watch** to also reload automatically on every save). The panel then opens in Media Encoder.
 
-![The scaffolded plugin panel open inside Adobe Media Encoder](../images/udt-ame-images/panel-ame.png)
+| Click **Load** in UDT | The panel appears in Media Encoder |
+| --- | --- |
+| ![Clicking Load in the plugin's row in UDT](../images/udt-ame-images/load.png) | ![The scaffolded plugin panel open inside Adobe Media Encoder](../images/udt-ame-images/panel-ame.png) |
 
 <InlineAlert slots="text"/>
 
