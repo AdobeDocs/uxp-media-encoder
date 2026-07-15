@@ -1,24 +1,108 @@
 ---
-title: Guides - Analytics
-description: This is the guides overview page of  Analytics 
+title: "Build Your First Plugin: UXP for Adobe Media Encoder"
+description: Scaffold, load, edit, and run your first UXP plugin inside Adobe Media Encoder using the UXP Developer Tool.
+keywords:
+  - UXP Plugin
+  - Adobe Media Encoder
+  - UXP Developer Tool
+  - UDT
+  - quick start
+  - hello world
+  - plugin scaffolding
+complexity: beginner
+reading_time: 10 min
+contributors:
+  - https://github.com/karan0207
 ---
 
-# Get Started
+# Build Your First Plugin
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada feugiat enim vel facilisis. Nunc eget enim eu lacus lobortis tincidunt a nec est. Nunc quis sapien quis orci rutrum sollicitudin. Nullam vehicula ultricies mauris, id aliquam justo aliquam vitae. Nam quis tincidunt ante. Curabitur sagittis aliquam elit, at auctor enim maximus et. Praesent in lectus facilisis, tempor magna eget, bibendum est. In quis ornare mi. Donec vestibulum viverra magna, non mollis leo vestibulum sit amet. Aenean euismod nulla augue, sit amet vehicula nibh faucibus vel. Fusce at est lacus. Nullam ante nulla, elementum nec ornare in, placerat luctus enim. Suspendisse vitae lacinia nibh. Pellentesque porta accumsan est at volutpat. Nulla aliquam dictum faucibus.
+By the end of this tutorial you'll have a working UXP plugin running inside Adobe Media Encoder: a panel you scaffolded from a template, edited in your code editor, and watched reload live in the host app. It's the shortest path from an empty folder to something on screen.
 
-## Authentication
+You won't write much code here. The goal is to learn the loop you'll use for every plugin: scaffold, load, edit, reload.
 
-Mauris pellentesque ornare nulla. Proin fermentum elementum velit non consequat. Donec euismod nisl sed tellus sagittis, a consequat leo rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse neque justo, porttitor eget volutpat sed, suscipit nec mauris. Etiam nec egestas purus. Praesent suscipit in elit cursus consectetur. Duis blandit pulvinar odio, eget volutpat magna vestibulum interdum. Ut sed ultrices risus, vel gravida nisi. Sed vitae rutrum felis. Aliquam at eros molestie, sagittis augue sed, venenatis erat. Praesent at consectetur tellus, ut vehicula nunc. Pellentesque aliquet condimentum neque, fermentum consequat neque viverra vel. Aliquam accumsan dignissim turpis vitae consequat. Aenean id justo vel diam sollicitudin posuere. Sed eu mauris ac elit porta commodo et varius sem.
+## Prerequisites
 
-## OAuth
+You need a code editor and the UXP Developer Tool (UDT) with Developer Mode turned on. If you haven't set those up yet, do that first:
 
-Donec imperdiet tempus ligula, sit amet pellentesque justo pharetra quis. Duis sed lacus diam. Maecenas sollicitudin diam sit amet pharetra placerat. Aliquam egestas lectus et tellus sagittis, venenatis finibus nisi volutpat. Cras laoreet, nisl sed faucibus laoreet, nibh arcu pretium enim, eget elementum ligula tellus vitae lorem. Aenean consequat in lorem at venenatis. Phasellus consequat dolor in libero vulputate rutrum. Nulla sit amet augue fringilla, elementum libero eget, accumsan velit. Suspendisse et lorem ornare, congue justo vel, ultrices felis. Ut et aliquet eros. Nulla facilisi. Nulla vitae velit a enim egestas eleifend. Etiam malesuada orci non mollis vulputate. Praesent id augue eget sapien lobortis bibendum. Praesent placerat tellus dui, vel facilisis magna condimentum in.
+- [Set up your developer tools](../get-started/developer-tools/index.md) covers installing UDT and enabling Developer Mode.
+- Have Adobe Media Encoder installed and ready to launch.
 
-<InlineAlert variant="info" slots="text"/>
+## 1. Scaffold the plugin
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna tellus, fringilla sit amet lorem eget, dignissim pellentesque ligula. Donec nec dolor vitae leo laoreet aliquam vehicula at dui. Integer in tortor lacus. Aliquam convallis, lorem ac consectetur sodales, tellus.
+The UXP Developer Tool can generate a ready-to-run plugin from a starter template, so you don't begin from a blank folder.
 
-## JWT
+Open UDT and click **Create Plugin**.
 
-Donec imperdiet tempus ligula, sit amet pellentesque justo pharetra quis. Duis sed lacus diam. Maecenas sollicitudin diam sit amet pharetra placerat. Aliquam egestas lectus et tellus sagittis, venenatis finibus nisi volutpat. Cras laoreet, nisl sed faucibus laoreet, nibh arcu pretium enim, eget elementum ligula tellus vitae lorem. Aenean consequat in lorem at venenatis. Phasellus consequat dolor in libero vulputate rutrum. Nulla sit amet augue fringilla, elementum libero eget, accumsan velit. Suspendisse et lorem ornare, congue justo vel, ultrices felis. Ut et aliquet eros. Nulla facilisi. Nulla vitae velit a enim egestas eleifend. Etiam malesuada orci non mollis vulputate. Praesent id augue eget sapien lobortis bibendum. Praesent placerat tellus dui, vel facilisis magna condimentum in.
+![The UXP Developer Tool with the Create Plugin action highlighted](../images/udt-ame-images/udt-ui.png)
+
+A dialog opens where you set the plugin's details. Point it at Media Encoder as the host application:
+
+![The UDT Create Plugin dialog with fields for name, host application, and template](../images/select-host.png)
+
+| Field | Value |
+| --- | --- |
+| **Name** | `ame-demo` (or any name you like) |
+| **Plugin ID** | Leave as generated |
+| **Host Application** | Select **Adobe Media Encoder** |
+| **Host Application Version** | The version you have installed |
+| **Template** | `ame-quick-starter` |
+
+This tutorial uses the `ame-quick-starter` template, a plain HTML and JavaScript panel that's the easiest place to start. Three other starters are available if you prefer a different setup:
+
+- `quick-starter` : generic HTML and JavaScript
+- `react-quick-starter` : a React-based panel
+- `webview-quick-starter` : loads a web view
+
+Click **Select Folder** and choose where to save the plugin. UDT scaffolds a project named after the Plugin ID. Inside, you'll find a handful of files:
+
+| File | What it's for |
+| --- | --- |
+| `manifest.json` | Plugin configuration: name, host app, and entry points |
+| `index.html` | The panel's UI |
+| `main.js` | The panel's logic |
+| `icons/` | Icons shown for the plugin |
+| `README.md` | Notes about the plugin |
+
+## 2. Load it into Media Encoder
+
+Start Media Encoder and wait until it's fully open, then leave it running. Back in UDT, your plugin appears in the list.
+
+In your plugin's row, click **Load** (or **Load & Watch** to also reload automatically on every save). The panel then opens in Media Encoder.
+
+| Click **Load** in UDT | The panel appears in Media Encoder |
+| --- | --- |
+| ![Clicking Load in the plugin's row in UDT](../images/udt-ame-images/load.png) | ![The scaffolded plugin panel open inside Adobe Media Encoder](../images/udt-ame-images/panel-ame.png) |
+
+<InlineAlert slots="text"/>
+
+Closed the panel by accident? Reopen it from Media Encoder's **Window** menu.
+
+## 3. Make it your own
+
+With the panel running, change something and watch it update. Open `index.html` in your code editor, find the panel's heading, and edit the text:
+
+```html
+<h4>My First Media Encoder Plugin</h4>
+```
+
+Save the file. If you used **Load & Watch**, the panel reloads on its own and your new heading appears. Otherwise, click **Reload** in UDT.
+
+![The plugin panel in Media Encoder showing the edited heading](../images/udt-ame-images/heading-panel.png)
+
+<InlineAlert slots="text"/>
+
+Editing `manifest.json` is the exception: manifest changes don't hot-reload. Unload the plugin in UDT, then load it again.
+
+## 4. See where the logic lives
+
+The panel's `Console` area shows a `Ready` message once the plugin loads. That message comes from `main.js`, which runs when the panel opens.
+
+Open `main.js` in your editor. This is where your plugin talks to the host: it's the entry point for calling the [Media Encoder API](../media-encoder-api/index.md), the same API you'll use to read the encoding queue, add sources, and start encodes in a real plugin. For now, seeing `Ready` in the panel confirms your code is running inside Media Encoder.
+
+## Next steps
+
+That's the full loop: scaffold, load, edit, reload. From here:
+
+- Explore the [Media Encoder API](../media-encoder-api/index.md) to control the encoding queue from your plugin.
+- Coming from CEP or ExtendScript? See [Migrate to UXP](migrating/index.md) for what carries over.
