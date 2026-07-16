@@ -4,16 +4,11 @@ description: Practical code examples for common UXP plugin development tasks
 keywords:
   - UXP recipes
   - code examples
-  - clipboard operations
   - CSS styling
   - debugging
-  - external processes
   - filesystem operations
-  - host information
   - HTML elements
   - event listeners
-  - JavaScript modules
-  - network operations
 contributors:
   - https://github.com/kasivn
 ---
@@ -33,30 +28,6 @@ For **UXP Plugins** specific content, please refer to the [Plugins >Tutorials se
 [Filesystem Operations](filesystem-operations/index.md)
 
 Read, write, and manage files and folders in UXP plugins with proper permissions
-
-<DiscoverBlock slots="link, text"/>
-
-[Network Operations](network/index.md)
-
-Learn how to connect your UXP plugin to the web—fetch data, communicate with APIs, and establish WebSocket connections
-
-<DiscoverBlock slots="link, text"/>
-
-[Launch External Processes](external-process/index.md)
-
-Open files and launch applications from your plugin to extend workflows beyond Media Encoder
-
-<DiscoverBlock slots="link, text"/>
-
-[Clipboard Operations](clipboard/index.md)
-
-Integrate your plugin with the system clipboard to read and write text data
-
-<DiscoverBlock slots="link, text"/>
-
-[Host Environment Information](host-info/index.md)
-
-Detect the user's operating system, application version, and UXP runtime
 
 ## Language Basics
 
@@ -83,12 +54,6 @@ Handle user interactions using event listeners in JavaScript or inline event han
 [Debugging Techniques](debug/index.md)
 
 Use console logs and dialog methods to debug your plugin quickly
-
-<DiscoverBlock slots="link, text"/>
-
-[JavaScript Modules](js-modules/index.md)
-
-Learn how to organize your plugin code across multiple JavaScript files using modules
 
 ## Other resources
 
