@@ -17,3 +17,5 @@ linter-report.txt
 
 # claude-flow tooling
 .claude-flow
+
+.ref
