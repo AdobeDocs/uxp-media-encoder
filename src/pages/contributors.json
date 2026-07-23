@@ -1,7 +1,7 @@
 {
-  "total": 35,
+  "total": 29,
   "offset": 0,
-  "limit": 35,
+  "limit": 29,
   "data": [
     {
       "page": "/",
@@ -30,11 +30,12 @@
     {
       "page": "/config",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "7/3/2026"
+      "lastUpdated": "7/21/2026"
     },
     {
       "page": "/get-started/",
@@ -48,7 +49,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "7/14/2026"
     },
     {
       "page": "/get-started/nomenclature/",
@@ -67,16 +68,31 @@
     {
       "page": "/media-encoder-api/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "7/21/2026"
+    },
+    {
+      "page": "/media-encoder-api/render-options/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4"
+      ],
+      "lastUpdated": "7/21/2026"
+    },
+    {
+      "page": "/media-encoder-api/render-queue/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4"
+      ],
+      "lastUpdated": "7/22/2026"
     },
     {
       "page": "/plugins/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "7/14/2026"
     },
     {
       "page": "/plugins/migrating/",
@@ -97,42 +113,21 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/3/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/fundamentals/apis/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/fundamentals/dom-apis/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/fundamentals/eslint-support/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/fundamentals/typescript-support/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/fundamentals/user-interfaces/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/migration-guides/",
@@ -160,77 +155,42 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/recipes/clipboard/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/css-styling/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/debug/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/recipes/external-process/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/filesystem-operations/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/recipes/host-info/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/html-elements/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/html-events/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/recipes/js-modules/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
-    },
-    {
-      "page": "/resources/recipes/network/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/resources/recipes/recipe-template",
@@ -244,7 +204,7 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "7/14/2026"
+      "lastUpdated": "7/16/2026"
     },
     {
       "page": "/uxp-api/",
