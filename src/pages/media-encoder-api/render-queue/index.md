@@ -38,7 +38,7 @@ const renderQueue = app.RenderQueue;
 
 <HorizontalLine />
 
-# Constants
+## Constants
 
 These Render Queue Constants are used as parameters in various `RenderQueue` API methods for Media Encoder.
 
@@ -51,20 +51,77 @@ const PROGRESS_CATEGORY_ID = renderQueue.PROGRESS_CATEGORY_ID; // "AMEProgressCa
 const RENDER_QUEUE_RUNNING = renderQueue.RENDER_QUEUE_RUNNING; // 2
 ```
 
-| Name                       | Min Version | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| :------------------------- | :---------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| PROGRESS_CATEGORY_ID       | 26.5        | _string_ | Retrieves the unique identifier for the progress category for global progress of the AME renderer. This ID allows access to the global progress of the AME Renderer. To obtain the category, use `getOrCreateProgressCategory()` method from the ProgressCategoryContainer object. The ProgressItemScriptObject should be used to manage individual progress items. Each job item is registered using its unique reference ID. |
-| RENDER_QUEUE_INVALID_STATE | 26.5        | _int_    | Render queue invalid state.                                                                                                                                                                                                                                                                                                                                                                                                    |
-| RENDER_QUEUE_PAUSED        | 26.5        | _int_    | Render queue paused.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| RENDER_QUEUE_RUNNING       | 26.5        | _int_    | Render queue running.                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RENDER_QUEUE_STOPPED       | 26.5        | _int_    | Render queue stopped.                                                                                                                                                                                                                                                                                                                                                                                                          |
-| RENDER_QUEUE_STOPPING      | 26.5        | _int_    | Render queue stopping.                                                                                                                                                                                                                                                                                                                                                                                                         |
-| RESULT_ERROR               | 26.5        | _int_    | Validation result when your render job returns an error.                                                                                                                                                                                                                                                                                                                                                                       |
-| RESULT_SUCCESS             | 26.5        | _int_    | Validation result when your render job returns successfully.                                                                                                                                                                                                                                                                                                                                                                   |
+### PROGRESS_CATEGORY_ID
+
+Retrieves the unique identifier for the progress category for global progress of the AME renderer. This ID allows access to the global progress of the AME Renderer. To obtain the category, use `getOrCreateProgressCategory()` method from the ProgressCategoryContainer object. The ProgressItemScriptObject should be used to manage individual progress items. Each job item is registered using its unique reference ID.
+
+Type: _string_
+
+Since: **26.5**
 
 <HorizontalLine />
 
-# Methods
+### RENDER_QUEUE_INVALID_STATE
+
+Render queue invalid state.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RENDER_QUEUE_PAUSED
+
+Render queue paused state.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RENDER_QUEUE_RUNNING
+
+Render queue running state.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RENDER_QUEUE_STOPPED
+
+Render queue stopped state.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RESULT_ERROR
+
+Validation result when your render job returns an error.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RESULT_SUCCESS
+
+Validation result when your render job returns successfully.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+## Methods
 
 ### enqueueFile
 
