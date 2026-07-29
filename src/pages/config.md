@@ -36,4 +36,5 @@
     - [Render Queue](media-encoder-api/render-queue/index.md)
       - [Constants](media-encoder-api/render-queue/index.md#constants)
       - [Methods](media-encoder-api/render-queue/index.md#methods)
+      - [Render Queue Instance](media-encoder-api/render-queue/render-queue-instance/index.md)
     - [Render Options](media-encoder-api/render-options/index.md)
