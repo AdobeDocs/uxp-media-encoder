@@ -197,6 +197,46 @@ success; // true
 
 <HorizontalLine />
 
+### renderFile
+
+Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
+
+This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, Adobe After Effects project files, and unified project files.
+
+For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and `setSequenceGUID()`.
+
+Since: **26.5**
+
+#### Parameters
+
+| Name           | Type     | Description                   |
+| :------------- | :------- | :---------------------------- |
+| filePath       | _string_ | File path to the media source |
+| presetFilePath | _string_ | File path to the preset file  |
+| outputPath     | _string_ | File path to the output file  |
+
+#### Returns
+
+| Name       | Type     | Description                          |
+| :--------- | :------- | :----------------------------------- |
+| jobGroupId | _string_ | The job group ID for the current job |
+| jobId      | _string_ | The job ID for the current job       |
+| message    | _string_ | Result message of enqueue action     |
+| outputPath | _string_ | File path to the output file         |
+| result     | _number_ | 0 = success, 1 = error               |
+
+```javascript
+const app = require("mediaencoder");
+const result = await app.RenderQueue.renderFile(
+  "path/to/source.mov",
+  "path/to/preset.epr",
+  "path/to/out.mp4",
+);
+result; // { jobGroupId: string, jobId: string, message: string, outputPath: string, result: number }
+```
+
+<HorizontalLine />
+
 ### getInstance
 
 Gets an instance of the RenderQueue object.
