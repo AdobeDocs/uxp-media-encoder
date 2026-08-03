@@ -362,6 +362,32 @@ missingAssets; // [
 
 <HorizontalLine />
 
+### getProjectItemGUIDs
+
+Returns the list of GUIDs for objects ( Premiere sequences or After Effects compositions) at the top/root level.
+
+Since: **26.5**
+
+#### Parameters
+
+| Name        | Type     | Description                                        |
+| :---------- | :------- | :------------------------------------------------- |
+| projectPath | _string_ | Path to the Premiere or After Effects project file |
+
+#### Returns
+
+| Name  | Type     | Description                                                                                               |
+| :---- | :------- | :-------------------------------------------------------------------------------------------------------- |
+| guids | _object_ | Object containing a _guids_ property containing an array of GUID strings for the relevant project item(s) |
+
+```javascript
+const app = require("mediaencoder");
+const res = app.RenderQueue.getProjectItemGUIDs("path/to/project.prproj");
+res; // { guids: ["7717fd87-1b69-4290-b5b0-4eb990d7afd8"] }
+```
+
+<HorizontalLine />
+
 ### start
 
 Starts rendering queue. Can be used to continue after a pause.
