@@ -241,10 +241,6 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
 
-This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, Adobe After Effects project files, and unified project files.
-
-For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and `setSequenceGUID()`.
-
 Since: **26.5**
 
 #### Parameters
