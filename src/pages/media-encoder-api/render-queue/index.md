@@ -165,42 +165,34 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 ### enqueueImagesAsSequence
 
-<InlineAlert variant="info" slots="text"/>
-
-⚠️ PENDING CORRECTIONS (example not currently working, verify params and returns)
-
 Adds a group of images an image sequence to the render queue. The images will be sorted in alphabetical order by default.
 
 Since: **26.5**
 
 #### Parameters
 
-| Name                 | Type                | Description                                                                                                |
-| :------------------- | :------------------ | :--------------------------------------------------------------------------------------------------------- |
-| containingFolderPath | _string_            | The folder containing image files for the sequence                                                         |
-| imageFilePath        | _string_            | The extension of this image path will be used in this function to filter the files in the directory        |
-| presetFilePath       | _string_            | File path to the preset file                                                                               |
-| outputFilePath       | _string (optional)_ | If outputPath is empty, then the output file name will be generated based on the containingFolderPath name |
+| Name                 | Type                | Description                                                                                                                                  |
+| :------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| containingFolderPath | _string_            | The folder containing image files for the sequence                                                                                           |
+| firstImageFilePath   | _string_            | The file to use as the first image file, the extension of this image path will be used in this function to filter the files in the directory |
+| presetFilePath       | _string_            | File path to the preset file                                                                                                                 |
+| outputFilePath       | _string (optional)_ | If outputPath is empty, then the output file name will be generated based on the containingFolderPath name                                   |
 
 #### Returns
 
-| Name       | Type     | Description                          |
-| :--------- | :------- | :----------------------------------- |
-| jobGroupId | _string_ | The job group ID for the current job |
-| jobId      | _string_ | The job ID for the current job       |
-| message    | _string_ | Result message of enqueue action     |
-| outputPath | _string_ | File path to the output file         |
-| result     | _number_ | 0 = success, 1 = error               |
+| Name    | Type      | Description                                      |
+| :------ | :-------- | :----------------------------------------------- |
+| success | _boolean_ | Returns _true_ if the job was added successfully |
 
 ```javascript
 const app = require("mediaencoder");
-const result = await app.RenderQueue.enqueueImagesAsSequence(
+const success = await app.RenderQueue.enqueueImagesAsSequence(
   "path/to/imagesequenceFolder",
-  "jpg",
+  "path/to/imagesequenceFolder/IMAGE_0001.jpg",
   "path/to/preset.epr",
   "path/to/output/file.mp4",
 );
-result; // { jobGroupId: string, jobId: string, message: string, outputPath: string, result: number }
+success; // true
 ```
 
 <HorizontalLine />
