@@ -64,3 +64,5 @@ Type: _string_
 Since: **26.5**
 
 <HorizontalLine />
+
+## Methods
