@@ -101,6 +101,16 @@ Since: **26.5**
 
 <HorizontalLine />
 
+### RENDER_QUEUE_STOPPING
+
+Render queue stopping state.
+
+Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
 ### RESULT_ERROR
 
 Validation result when your render job returns an error.
@@ -116,6 +126,26 @@ Since: **26.5**
 Validation result when your render job returns successfully.
 
 Type: _int_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### RENDER_QUEUE_STATUS_CHANGED
+
+Event ID for when the render queue status changes.
+
+Type: _string_
+
+Since: **26.5**
+
+<HorizontalLine />
+
+### AUDIO_PREPROGRESS_VALUE_CHANGED
+
+Event ID for when the audio preprogress value changes.
+
+Type: _string_
 
 Since: **26.5**
 
