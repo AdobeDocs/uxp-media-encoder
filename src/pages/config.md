@@ -38,4 +38,8 @@
       - [Methods](media-encoder-api/render-queue/index.md#methods)
       - [Render Queue Instance](media-encoder-api/render-queue/render-queue-instance/index.md)
     - [Render Options](media-encoder-api/render-options/index.md)
+      - [Constants](media-encoder-api/render-options/index.md#constants)
+      - [Methods](media-encoder-api/render-options/index.md#methods)
     - [Watch Folder](media-encoder-api/watch-folder/index.md)
+      - [Constants](media-encoder-api/watch-folder/index.md#constants)
+      - [Methods](media-encoder-api/watch-folder/index.md#methods)
