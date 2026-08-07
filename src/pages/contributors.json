@@ -1,7 +1,7 @@
 {
-  "total": 29,
+  "total": 31,
   "offset": 0,
-  "limit": 29,
+  "limit": 31,
   "data": [
     {
       "page": "/",
@@ -35,7 +35,7 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "7/21/2026"
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/get-started/",
@@ -78,14 +78,28 @@
       "avatars": [
         "https://avatars.githubusercontent.com/u/10479769?v=4"
       ],
-      "lastUpdated": "7/21/2026"
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/media-encoder-api/render-queue/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/10479769?v=4"
       ],
-      "lastUpdated": "7/22/2026"
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/media-encoder-api/render-queue/render-queue-instance/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
+    },
+    {
+      "page": "/media-encoder-api/watch-folder/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/10479769?v=4"
+      ],
+      "lastUpdated": "8/6/2026"
     },
     {
       "page": "/plugins/",
