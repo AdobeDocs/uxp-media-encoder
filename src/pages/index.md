@@ -19,7 +19,6 @@ Build plugins in HTML, CSS, and JavaScript that run inside Media Encoder, discov
 
 * [Get Started](get-started/index.md)
 * [Plugins](plugins/index.md)
-* [Migrate from CEP](plugins/migrating/index.md)
 * [Developer Forums](https://forums.creativeclouddeveloper.com/)
 
 ## Overview
@@ -52,12 +51,6 @@ Set up your environment and load a panel with the UXP Developer Tool.
 [Plugins](plugins/index.md)
 
 Manifests, entry points, panels, and recipes for common encoding tasks.
-
-<DiscoverBlock slots="link, text"/>
-
-[Migrate from CEP](plugins/migrating/index.md)
-
-What carries over from ExtendScript and what changed.
 
 ## API Reference
 
