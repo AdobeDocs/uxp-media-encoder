@@ -14,3 +14,7 @@
     - [Developer Tools](get-started/developer-tools/index.md)
     - [Tech Stack Foundations](get-started/tech-stack/index.md)
     - [Nomenclature](get-started/nomenclature/index.md)
+    - Quick-Starter Plugin header
+    - [Build Your First Plugin](plugins/index.md)
+    - Sample Plugins header
+    - [Sample Plugins](plugins/sample-plugins/index.md)
