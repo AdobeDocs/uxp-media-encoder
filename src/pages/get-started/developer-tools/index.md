@@ -50,9 +50,9 @@ Admin privileges are required
 
 UDT needs administrator-level privileges to run correctly. If you cannot get elevated permissions on your machine, you may not be able to use it.
 
-Install UDT directly [from Creative Cloud](https://creativecloud.adobe.com/apps/download/uxp-developer-tools), or follow these steps:
+Install UDT directly [from Creative Cloud](https://www.adobe.com/download/uxp-developer-tools), or follow these steps:
 
-1. Open the Adobe Creative Cloud desktop app. If you don't have it, [download and install it first](https://creativecloud.adobe.com/apps/download/creative-cloud).
+1. Open the Adobe Creative Cloud desktop app. If you don't have it, [download and install it first](https://www.adobe.com/download/creative-cloud).
 2. Sign in with your Adobe ID.
 3. Go to the **All apps** section and search for "UXP Developer Tools".
 4. Click **Install** on the UXP Developer Tools card.
