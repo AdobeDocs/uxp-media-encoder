@@ -17,7 +17,7 @@
     - Quick-Starter Plugin header
     - [Build Your First Plugin](plugins/index.md)
     - Sample Plugins header
-    - [Sample Plugins](plugins/sample-plugins/index.md)
+    - [Render Queue Panel](plugins/sample-plugins/index.md)
     - [Media Encoder API](media-encoder-api/index.md)
       - [Render Queue](media-encoder-api/render-queue/index.md)
         - [Constants](media-encoder-api/render-queue/index.md#constants)
