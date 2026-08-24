@@ -17,6 +17,7 @@ keywords:
 
 contributors:
   - https://github.com/justintaylor-dev
+  - https://github.com/sukriyeLudwig
 ---
 
 # Render Queue
@@ -53,7 +54,7 @@ const RENDER_QUEUE_RUNNING = renderQueue.RENDER_QUEUE_RUNNING; // 2
 
 ### PROGRESS_CATEGORY_ID
 
-Retrieves the unique identifier for the progress category for global progress of the AME renderer. This ID allows access to the global progress of the AME Renderer. To obtain the category, use `getOrCreateProgressCategory()` method from the ProgressCategoryContainer object. The ProgressItemScriptObject should be used to manage individual progress items. Each job item is registered using its unique reference ID.
+Retrieves the unique identifier for the progress category for global progress of the AME renderer. This ID allows access to the global progress of the AME Renderer. To obtain the category, use [getOrCreateProgressCategory()](../progress-category-container/index.md#getorcreateprogresscategory) on the [ProgressCategoryContainer](../progress-category-container/index.md) object. The [ProgressItem](../progress-category-container/progress-item/index.md) object should be used to manage individual progress items. Each job item is registered using its unique reference ID.
 
 Type: _string_
 
@@ -157,9 +158,9 @@ Since: **26.5**
 
 Enqueues a media source with a given RenderOptions object but does NOT start the queue to render. Renders a media source using a specified preset.
 
-This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, Adobe After Effects project files, and unified project files.
+This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, and Adobe After Effects project files.
 
-For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and `setSequenceGUID()`.
+For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
 
 Since: **26.5**
 
@@ -231,9 +232,9 @@ success; // true
 
 Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
 
-This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, Adobe After Effects project files, and unified project files.
+This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, and Adobe After Effects project files.
 
-For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and `setSequenceGUID()`.
+For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
 
 Since: **26.5**
 
@@ -321,6 +322,64 @@ none
 const app = require("mediaencoder");
 const instance = app.RenderQueue.getInstance();
 instance; // { addEventListener, dispatchEvent, getStatus, removeEventListener, subscribeToEvent }
+```
+
+<HorizontalLine />
+
+### getJob
+
+Returns a [RenderJob](./render-job/index.md) object for the given job ID, or `null` if no matching job is found in the queue.
+
+Since: **26.5**
+
+#### Parameters
+
+| Name  | Type     | Description                                       |
+| :---- | :------- | :------------------------------------------------- |
+| jobId | _string_ | The job ID returned from `renderFile` or `enqueueFile` |
+
+#### Returns
+
+[RenderJob](./render-job/index.md), or `null` if no matching job is found.
+
+```javascript
+const app = require("mediaencoder");
+const result = await app.RenderQueue.enqueueFile(
+  "path/to/source.mov",
+  "path/to/preset.epr",
+  "path/to/out.mp4",
+);
+const job = app.RenderQueue.getJob(result.jobId);
+```
+
+<HorizontalLine />
+
+### getJobGroup
+
+Returns a [RenderJobGroup](./render-job-group/index.md) object for the given job group ID, or `null` if no matching group is found in the queue. A group represents a single source and can contain multiple outputs ([RenderJob](./render-job/index.md) objects).
+
+Since: **26.5**
+
+#### Parameters
+
+| Name       | Type     | Description                                                                        |
+| :--------- | :------- | :---------------------------------------------------------------------------------- |
+| jobGroupId | _string_ | The group ID returned from `renderFile`/`enqueueFile` (`jobGroupId`) or [RenderJobGroup.getID](./render-job-group/index.md#getid) |
+
+#### Returns
+
+[RenderJobGroup](./render-job-group/index.md), or `null` if no matching group is found.
+
+Throws a parameter error if `jobGroupId` is not a well-formed GUID, or if there is no active render queue to resolve it against.
+
+```javascript
+const app = require("mediaencoder");
+const result = await app.RenderQueue.enqueueFile(
+  "path/to/source.mov",
+  "path/to/preset.epr",
+  "path/to/out.mp4",
+);
+const group = app.RenderQueue.getJobGroup(result.jobGroupId);
 ```
 
 <HorizontalLine />
