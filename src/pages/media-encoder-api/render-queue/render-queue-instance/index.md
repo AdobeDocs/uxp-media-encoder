@@ -1,9 +1,9 @@
 ---
 title: "Render Queue Instance: Media Encoder API"
 description: "Media Encoder's Queue Instance APIs for adding, modifying, and enquing items for render."
-id: renderQueue
-title: RenderQueue
-sidebar_label: RenderQueue
+id: renderQueueInstance
+title: RenderQueueInstance
+sidebar_label: RenderQueueInstance
 product: mediaencoder
 keywords:
   - UXP
@@ -17,6 +17,7 @@ keywords:
 
 contributors:
   - https://github.com/justintaylor-dev
+  - https://github.com/sukriyeLudwig
 ---
 
 # Render Queue Instance
@@ -35,11 +36,7 @@ Provides the current status of the rendering queue, represented as an enumeratio
 
 The possible states are: Stopped = 0, Paused = 1, Running = 2, Stopping = 3, InvalidState = 4
 
-These states can be accessed as enum types using a RenderQueueEvent object.
-
-For example, you can check the render queue status using `renderqueueEventObject.RENDER_QUEUE_RUNNING`
-
-For more information, refer to the RenderQueueEvent scripting API documentation
+Compare the returned status against the [`RENDER_QUEUE_*` constants](../index.md#constants) on `RenderQueue`, for example `app.RenderQueue.RENDER_QUEUE_RUNNING`.
 
 Since: **26.5**
 
