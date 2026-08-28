@@ -5,7 +5,7 @@
     - [UXP for Media Encoder](index.md)
     - [Get Started](get-started/index.md)
     - [Plugins](plugins/index.md)
-    - [UXP API](uxp-api/index.md)
+    - [UXP API](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
     - [Media Encoder API](media-encoder-api/index.md)
 
 - subPages:
