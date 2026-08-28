@@ -1,7 +1,7 @@
 {
-  "total": 38,
+  "total": 39,
   "offset": 0,
-  "limit": 38,
+  "limit": 39,
   "data": [
     {
       "page": "/",
@@ -281,6 +281,13 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
       "lastUpdated": "7/16/2026"
+    },
+    {
+      "page": "/uxp-api/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "6/30/2026"
     }
   ],
   ":type": "sheet"
