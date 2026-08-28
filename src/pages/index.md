@@ -58,7 +58,7 @@ The platform and Media Encoder APIs your plugin calls.
 
 <DiscoverBlock slots="link, text"/>
 
-[UXP API](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external=true)
+[UXP API](uxp-api/index.md)
 
 File system, networking, storage, and Spectrum UI components.
 
