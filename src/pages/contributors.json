@@ -6,10 +6,11 @@
     {
       "page": "/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/19/2026"
+      "lastUpdated": "8/28/2026"
     },
     {
       "page": "/api/",
@@ -30,12 +31,12 @@
     {
       "page": "/config",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "8/28/2026"
     },
     {
       "page": "/get-started/",
@@ -62,9 +63,10 @@
     {
       "page": "/get-started/tech-stack/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "8/28/2026"
     },
     {
       "page": "/media-encoder-api/",
