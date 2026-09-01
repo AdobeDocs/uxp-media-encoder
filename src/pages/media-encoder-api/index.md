@@ -15,39 +15,38 @@ contributors:
 
 # Media Encoder API DOM Reference
 
-The Media Encoder API is the application layer Media Encoder adds on top of UXP: the encoding queue, presets, jobs, and the scripting hooks you use to automate rendering.
+The Media Encoder API is the host-specific layer Media Encoder adds on top of UXP: render queues, presets, jobs, watch folders, progress reporting, and the scripting hooks used to automate encoding. For file system access, networking, storage, HTML, CSS, and UI components, use the shared [UXP API reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external).
 
-## Overview
+## Access the API
 
-The following line allows you access to the Media Encoder DOM via UXP.
-
-```javascript
-const app = require("mediaencoder");
-```
-
-From here you have access to all the available API methods in Media Encoder.
-
-### Minimum Version
-
-You will now find minimum version information on properties and methods. This version tag corresponds to the version of Media Encoder where the member was introduced or last updated significantly. For properties, you will find a column "MIN VERSION". For methods, the version number appears alongside the documentation for the method.
-
-## Synchronous vs Asynchronous
-
-An important difference between ExtendScript (and CEP) and UXP is that all ExtendScript calls to Media Encoder (and other Adobe apps) were synchronous. This means they blocked the Media Encoder UI while they were executing. In UXP, a method calls are mostly asynchronous, and do not block the UI thread.
-
-For a smooth transition between the ExtendScript DOM and the UXP DOM, all properties (get and set) in the API were designed to be synchronous and do not need to be awaited. It is worth noting that they are, in the background, asynchronous in nature.
-
-## Working with Media Encoder Objects
-
-Media Encoder Application
-
-Through the `app` object, you can access all the API's Media Encoder has to offer.
-
-You can start the Media Encoder queue with:
+Load the Media Encoder module from your plugin. From `app`, you can reach every public Media Encoder API surface. For example, start the render queue with:
 
 ```javascript
 const app = require("mediaencoder");
-app.RenderQueue.start();
+const success = await app.RenderQueue.start();
 ```
 
-In the next section you can review detailed docs on all public API methods for Media Encoder.
+## Browse the API
+
+| Area | Use it to |
+| --- | --- |
+| [Render Queue](render-queue/index.md) | Add sources, inspect jobs, start or stop rendering, and subscribe to queue events |
+| [Render Options](render-options/index.md) | Choose presets, output paths, and work-area settings |
+| [Watch Folder](watch-folder/index.md) | Inspect and manage automatic encoding folders |
+| [TickTime](tick-time/index.md) | Represent precise time values used by render jobs and options |
+| [Progress Category Container](progress-category-container/index.md) | Group progress categories and report progress from a plugin |
+| [C2PAService](c2pa-service/index.md) | Work with Content Credentials settings and manifest locations |
+
+## Minimum Version Tags
+
+Properties and methods show the minimum Media Encoder version where the member was introduced or changed significantly. For properties, look for the **MIN VERSION** column. For methods, the version appears alongside the method documentation.
+
+## Synchronous and Asynchronous Access
+
+ExtendScript and CEP calls to Media Encoder were synchronous and could block the application UI. In UXP, most Media Encoder methods are asynchronous and do not block the UI thread. Await methods that return a Promise, or chain them with `.then()`.
+
+Property getters and setters are exposed synchronously for a smoother transition from the ExtendScript DOM and do not need to be awaited.
+
+## See the API in a Plugin
+
+The [Render Queue Panel sample](../get-started/samples/render-queue-panel/index.md) uses `async` and `await` across a working TypeScript plugin. Use it to connect reference entries to real UI actions and queue behavior.

@@ -1,6 +1,6 @@
 ---
-title: "Tech Stack Foundations: UXP for Adobe Media Encoder"
-description: "The web technologies and the UXP runtime behind Media Encoder plugins: HTML, CSS, JavaScript, the shared engine, and how panels and scripts use them."
+title: "UXP Tech Stack for Adobe Media Encoder"
+description: "Find the canonical UXP tech stack guide and the shared API reference used when building Adobe Media Encoder plugins."
 keywords:
   - UXP
   - Adobe Media Encoder
@@ -14,27 +14,22 @@ contributors:
   - https://github.com/karan0207
 ---
 
-# Tech Stack Foundations
+# UXP Tech Stack
 
-A UXP plugin is built from the web technologies you already know, running on a single runtime that Adobe ships inside Media Encoder and other applications.
+Media Encoder plugins use the same HTML, CSS, JavaScript runtime, UI system, and development tools as plugins for every other UXP-enabled Adobe application. The canonical explanation is maintained in the UXP Hub.
 
-## What you write in
+<DiscoverBlock slots="link, text"/>
 
-* **HTML** defines your panel's structure.
-* **CSS** styles it. Adobe's Spectrum design system gives you components that match the host UI.
-* **JavaScript** holds your logic and calls the Media Encoder APIs.
+[Read the UXP Tech Stack Guide](https://developer-stage.adobe.com/uxp/guides/explanation/tech-stack/?aio_external)
 
-You do not ship a browser. UXP provides a modern JavaScript engine and a curated set of web APIs, so behavior is consistent across the Adobe apps that support UXP.
+Learn how HTML, CSS, JavaScript, Spectrum components, and the UXP runtime fit together across hosts.
 
-## The two surfaces
+<DiscoverBlock slots="link, text"/>
 
-UXP work in Media Encoder falls into two surfaces that share the same runtime:
+[Browse the UXP API Reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
 
-* **Panels** render UI inside Media Encoder. A panel is the visible, interactive part of a plugin.
-* **Scripts** run logic against the host, with or without UI, to inspect and drive the encoding queue.
+Check the exact HTML elements, CSS features, JavaScript globals, modules, and Spectrum components supported by UXP.
 
-Because both use one engine, the code, libraries, and patterns you learn carry across panels, automation, and other UXP-enabled Adobe applications.
+## Media Encoder Layer
 
-## What is and is not available
-
-UXP supports a focused subset of web platform features rather than everything a browser offers. When in doubt, check the [UXP API reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external) for the exact elements, styles, and modules that are supported, instead of assuming a browser API exists.
+After choosing supported UXP capabilities, use the [Media Encoder API](../../media-encoder-api/index.md) for the render queue, jobs, presets, watch folders, and progress reporting.

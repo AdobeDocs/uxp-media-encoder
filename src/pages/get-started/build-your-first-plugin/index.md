@@ -23,10 +23,10 @@ You won't write much code here. The goal is to learn the loop you'll use for eve
 
 ## Prerequisites
 
-You need a code editor and the UXP Developer Tool (UDT) with Developer Mode turned on. If you haven't set those up yet, do that first:
-
-- [Set up your developer tools](../get-started/developer-tools/index.md) covers installing UDT and enabling Developer Mode.
-- Have Adobe Media Encoder installed and ready to launch.
+- Adobe Media Encoder 26.5 or newer, installed and running.
+- UXP Developer Tool (UDT) 2.2.1.18 or newer, with UDT Developer Mode enabled. See [Set Up Developer Tools](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) if this is your first UXP plugin.
+- Media Encoder Developer Mode enabled under **Edit > Preferences > Plugins**, followed by a host restart. See [Set Up Media Encoder](../developer-tools/index.md).
+- A code editor, such as Visual Studio Code.
 
 ## 1. Scaffold the plugin
 
@@ -34,11 +34,11 @@ The UXP Developer Tool can generate a ready-to-run plugin from a starter templat
 
 Open UDT and click **Create Plugin**.
 
-![The UXP Developer Tool with the Create Plugin action highlighted](../images/udt-ame-images/udt-ui.png)
+![The UXP Developer Tool with the Create Plugin action highlighted](../../images/udt-ame-images/udt-ui.png)
 
 A dialog opens where you set the plugin's details. Point it at Media Encoder as the host application:
 
-![The UDT Create Plugin dialog with fields for name, host application, and template](../images/select-host.png)
+![The UDT Create Plugin dialog with fields for name, host application, and template](../../images/select-host.png)
 
 | Field | Value |
 | --- | --- |
@@ -72,7 +72,7 @@ In your plugin's row, click **Load** (or **Load & Watch** to also reload automat
 
 | Click **Load** in UDT | The panel appears in Media Encoder |
 | --- | --- |
-| ![Clicking Load in the plugin's row in UDT](../images/udt-ame-images/load.png) | ![The scaffolded plugin panel open inside Adobe Media Encoder](../images/udt-ame-images/panel-ame.png) |
+| ![Clicking Load in the plugin's row in UDT](../../images/udt-ame-images/load.png) | ![The scaffolded plugin panel open inside Adobe Media Encoder](../../images/udt-ame-images/panel-ame.png) |
 
 <InlineAlert slots="text"/>
 
@@ -88,7 +88,7 @@ With the panel running, change something and watch it update. Open `index.html` 
 
 Save the file. If you used **Load & Watch**, the panel reloads on its own and your new heading appears. Otherwise, click **Reload** in UDT.
 
-![The plugin panel in Media Encoder showing the edited heading](../images/udt-ame-images/heading-panel.png)
+![The plugin panel in Media Encoder showing the edited heading](../../images/udt-ame-images/heading-panel.png)
 
 <InlineAlert slots="text"/>
 
@@ -96,13 +96,16 @@ Editing `manifest.json` is the exception: manifest changes don't hot-reload. Unl
 
 ## 4. See where the logic lives
 
-The panel's `Console` area shows a `Ready` message once the plugin loads. That message comes from `main.js`, which runs when the panel opens.
-
-Open `main.js` in your editor. This is where your plugin talks to the host: it's the entry point for calling the [Media Encoder API](../media-encoder-api/index.md), the same API you'll use to read the encoding queue, add sources, and start encodes in a real plugin. For now, seeing `Ready` in the panel confirms your code is running inside Media Encoder.
+The panel's `Console` area shows a `Ready` message once the plugin loads. That message comes from `main.js`, the entry point for calling the [Media Encoder API](../../media-encoder-api/index.md). In a real plugin, this is where you read the encoding queue, add sources, choose presets, and start encodes. For now, `Ready` confirms that your code is running inside Media Encoder.
 
 ## Next steps
 
-That's the full loop: scaffold, load, edit, reload. From here:
+The loop is scaffold, load, edit, reload. Continue with the path that matches your next task:
 
-- Explore the [Media Encoder API](../media-encoder-api/index.md) to control the encoding queue from your plugin.
-- Coming from CEP or ExtendScript? See [Migrate to UXP](migrating/index.md) for what carries over.
+- Explore the [Media Encoder API](../../media-encoder-api/index.md) for render queues, presets, jobs, and progress reporting.
+- Build the [Render Queue Panel sample](../samples/render-queue-panel/index.md) to see several Media Encoder APIs working together.
+- Learn about [manifests, entry points, panels, and commands](https://developer-stage.adobe.com/uxp/guides/explanation/?aio_external) in the UXP Hub.
+- Use the Hub's [how-to guides and recipes](https://developer-stage.adobe.com/uxp/guides/how-to/?aio_external) for shared plugin tasks.
+- [Debug your plugin](https://developer-stage.adobe.com/uxp/guides/how-to/debugging/?aio_external) with UDT's built-in DevTools.
+- [Package and distribute your plugin](https://developer-stage.adobe.com/uxp/guides/how-to/distribution/overview/?aio_external) when it is ready to ship.
+- Coming from CEP or ExtendScript? Follow the [Media Encoder migration path](../migrate-to-uxp/index.md) into the UXP Migration Center.

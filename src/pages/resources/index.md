@@ -22,7 +22,7 @@ In this section, you will find more in-depth guides and recipes to help you buil
 
 Prerequisites
 
-If you haven't already, we recommend you to start by reading the [Overview](../get-started/index.md) and [Getting Started](../plugins/index.md) guides. We will assume you are already familiar with the UXP Developer Tool (you have it [installed](../get-started/developer-tools/index.md#uxp-developer-tool-udt) and know [the basic workflow](../plugins/index.md)), and have a basic understanding of the [Concepts](../plugins/index.md).
+If you haven't already, we recommend you to start by reading the [Overview](../get-started/index.md) and [Getting Started](../get-started/build-your-first-plugin/index.md) guides. We will assume you are already familiar with the UXP Developer Tool (you have it [installed](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) and know [the basic workflow](../get-started/build-your-first-plugin/index.md)), and have a basic understanding of the [Concepts](../get-started/build-your-first-plugin/index.md).
 
 ## Content overview
 

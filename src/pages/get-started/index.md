@@ -1,6 +1,6 @@
 ---
 title: "Get Started: UXP for Adobe Media Encoder"
-description: "Start building UXP plugins and automation for Adobe Media Encoder: the development loop, prerequisites, and the essentials you need before your first panel."
+description: "Choose the right starting path for UXP fundamentals or Adobe Media Encoder-specific plugin development."
 keywords:
   - UXP
   - Adobe Media Encoder
@@ -15,47 +15,44 @@ contributors:
 
 # Get Started with UXP for Media Encoder
 
-This section gets you from zero to a running plugin. You write in HTML, CSS, and JavaScript, load your plugin into Media Encoder with the UXP Developer Tool, and call Media Encoder's APIs to drive the encoding queue.
+Building for Media Encoder combines two layers: the shared UXP platform and Media Encoder's host-specific APIs. Choose your path based on your UXP experience.
 
 <InlineAlert variant="info" slots="text"/>
 
-UXP for Adobe Media Encoder is in public beta. Load plugins with the UXP Developer Tool, keep Media Encoder running while you develop, and expect APIs and tooling to change.
+UXP for Adobe Media Encoder is in public beta. APIs and tooling may change before general availability.
 
-## The development loop
+## Choose Your Starting Point
 
-Three pieces work together, and knowing each role makes every later step easier to reason about:
+<Cards slots="image, heading, text, links" repeat="2" width="100%" />
 
-* **Media Encoder** is the host. Your plugin loads here, its panel renders here, and your code runs here against the Media Encoder APIs.
-* **The UXP Developer Tool (UDT)** is the bridge. It scaffolds your plugin, then loads, reloads, and debugs it inside Media Encoder.
-* **Your code editor** is where you write the HTML, CSS, and JavaScript.
+![Learn the shared UXP platform](../images/uxp-tutorials.svg)
 
-The loop is short: write code, reload in UDT, see the change in Media Encoder, then run an encode and watch it in the queue.
+### New to UXP?
 
-## Prerequisites
+Begin with the UXP Hub. It covers the shared developer journey: foundations, tools, plugin concepts, building and debugging, migration, and publishing.
 
-* Adobe Media Encoder (beta), installed and running.
-* The UXP Developer Tool (UDT).
-* A code editor, such as VS Code.
-* Helpful but not required: basic HTML and JavaScript.
+[Start with the UXP Developer Journey](uxp-developer-journey/index.md)
 
-## Essentials
+![Build plugins for Adobe Media Encoder](../images/media-encoder.svg)
 
-Read these first if UXP or extensibility is new to you.
+### Already Know UXP?
 
-<DiscoverBlock slots="link, text"/>
+Go directly to the Media Encoder path: check host requirements, enable Developer Mode, build a plugin, and explore the host API.
 
-[Developer Tools](developer-tools/index.md)
+[Start with Media Encoder](developer-tools/index.md)
 
-Install and use the UXP Developer Tool to scaffold, load, hot-reload, and debug your plugin.
+## Recommended Developer Journey
 
-<DiscoverBlock slots="link, text"/>
+If UXP is new to you:
 
-[Tech Stack Foundations](tech-stack/index.md)
+1. [Learn the shared UXP platform](uxp-developer-journey/index.md) in the UXP Hub.
+2. [Set up Media Encoder](developer-tools/index.md) as your host application.
+3. [Build your first Media Encoder plugin](build-your-first-plugin/index.md).
+4. [Explore the Render Queue Panel](samples/render-queue-panel/index.md) to see host APIs working together.
+5. Use the [Media Encoder API reference](../media-encoder-api/index.md) as you build your own integration.
 
-The web technologies and the UXP runtime your plugin is built on.
+If you already build UXP plugins for another host, begin at step 2.
 
-<DiscoverBlock slots="link, text"/>
+## Moving Existing Work
 
-[Nomenclature](nomenclature/index.md)
-
-The terms used across these docs: plugins, panels, scripts, manifests, and how they map to CEP and ExtendScript.
+Coming from CEP or ExtendScript? Follow the [migration path](migrate-to-uxp/index.md) before replacing host calls with the Media Encoder API.
