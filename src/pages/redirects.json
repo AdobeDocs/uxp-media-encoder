@@ -15,5 +15,6 @@
       "Source": "/media-encoder/uxp/plugins/migrating/",
       "Destination": "/media-encoder/uxp/get-started/migrate-to-uxp/"
     }
-  ]
+  ],
+  ":type": "sheet"
 }
