@@ -27,4 +27,4 @@ The questions and answers on this page are sample content and need to be reviewe
 
 #### How can I enable Developer Mode?
 
-You need to enable Developer mode in both the UXP Developer Tool and the host application. Follow the instructions in the [UXP Developer Tool](../../get-started/developer-tools/index.md#first-launch) and [Media Encoder](../../plugins/index.md#prerequisites) guides.
+You need to enable Developer mode in both the UXP Developer Tool and the host application. Follow the instructions in the [UXP Developer Tool](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) and [Media Encoder](../../get-started/build-your-first-plugin/index.md#prerequisites) guides.

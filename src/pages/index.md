@@ -9,61 +9,79 @@ contributors:
 
 # Automate Adobe Media Encoder with UXP
 
-Build plugins in HTML, CSS, and JavaScript that run inside Media Encoder, discover presets, and drive the encoding queue. Turn repetitive exports into automated, one-click workflows, the modern successor to ExtendScript.
+Build plugins that run inside Media Encoder, discover presets, and drive the encoding queue. Turn repetitive exports into one-click workflows with HTML, CSS, and JavaScript.
 
 ![Build UXP plugins and automation for Adobe Media Encoder](images/hero.svg)
-
-<Resources slots="heading, links"/>
-
-#### Resources
-
-* [Get Started](get-started/index.md)
-* [Plugins](plugins/index.md)
-* [Developer Forums](https://forums.creativeclouddeveloper.com/)
-
-## Overview
-
-Media Encoder is built for repetition: the same presets, the same delivery codecs, the same render queue, run again and again. UXP is how you take control of that work in code. It lets you build plugins that run inside Media Encoder using HTML, CSS, and JavaScript, and it is the modern replacement for the older CEP and ExtendScript tooling.
-
-You extend Media Encoder in two ways, and most projects use both:
-
-* **Panels** add interactive UI inside the app, custom controls, preset pickers, or a queue dashboard that sits alongside the native interface.
-* **Scripts** drive Media Encoder programmatically: inspect the encoding queue, add and start jobs, choose presets, and run unattended batch exports with no manual clicks.
-
-Both run on the same UXP engine, so your logic, libraries, and patterns carry across panels, automation, and other UXP-enabled Adobe applications. While you build, the UXP Developer Tool (UDT) loads your plugin, hot-reloads changes, and connects a debugger.
 
 <InlineAlert variant="info" slots="text"/>
 
 UXP for Adobe Media Encoder is in public beta. APIs and supported capabilities may change before general availability.
 
-## Start Building
+## Choose Where to Start
 
-Set up your environment and run your first automation inside Media Encoder.
+UXP has two layers: a shared platform for building plugins across Adobe applications, and a host API for working with Media Encoder. Start with the path that matches what you need.
+
+<Cards slots="image, heading, text, links" repeat="2" width="100%" />
+
+![Learn the shared UXP platform](images/uxp-tutorials.svg)
+
+### New to UXP?
+
+Set up your tools, learn plugin concepts and workflows, use shared APIs and recipes, debug your code, migrate existing extensions, and package and publish plugins.
+
+[Start in the UXP Hub](https://developer-stage.adobe.com/uxp/?aio_external)
+
+![Build plugins for Adobe Media Encoder](images/media-encoder.svg)
+
+### Building for Media Encoder?
+
+Check the host requirements, enable Developer Mode, and build a plugin that runs inside Media Encoder.
+
+[Get Started](get-started/index.md)
+
+## Build for Media Encoder
+
+This site covers the parts of UXP development that are specific to Media Encoder.
 
 <DiscoverBlock slots="link, text"/>
 
 [Get Started](get-started/index.md)
 
-Set up your environment and load a panel with the UXP Developer Tool.
+Prepare Media Encoder for development and connect it to the UXP Developer Tool.
 
 <DiscoverBlock slots="link, text"/>
 
-[Plugins](plugins/index.md)
+[Build Your First Plugin](get-started/build-your-first-plugin/index.md)
 
-Manifests, entry points, panels, and recipes for common encoding tasks.
-
-## API Reference
-
-The platform and Media Encoder APIs your plugin calls.
+Scaffold, load, edit, and reload a Media Encoder panel using the `ame-quick-starter` template.
 
 <DiscoverBlock slots="link, text"/>
 
-[UXP API](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
+[Explore the Render Queue Panel](get-started/samples/render-queue-panel/index.md)
 
-File system, networking, storage, and Spectrum UI components.
+Build and inspect a TypeScript sample that exercises the render queue, render options, and job APIs.
+
+## Choose the Right API
+
+Most plugins use both API layers. Use the shared UXP APIs for platform capabilities, then use the Media Encoder API to work with encoding features.
 
 <DiscoverBlock slots="link, text"/>
 
-[Media Encoder API](media-encoder-api/index.md)
+[UXP API Reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
 
-The encoding queue, presets, jobs, and scripting automation.
+File system, networking, storage, HTML, CSS, and Spectrum UI capabilities shared by every UXP host.
+
+<DiscoverBlock slots="link, text"/>
+
+[Media Encoder API Reference](media-encoder-api/index.md)
+
+The render queue, presets, jobs, progress reporting, watch folders, and other Media Encoder automation surfaces.
+
+## Continue in the UXP Hub
+
+When your Media Encoder integration is working, continue with the shared developer journey:
+
+- [Learn UXP concepts and workflows](https://developer-stage.adobe.com/uxp/guides/?aio_external)
+- [Package and distribute your plugin](https://developer-stage.adobe.com/uxp/guides/how-to/distribution/overview/?aio_external)
+- [Migrate from CEP or ExtendScript](https://developer-stage.adobe.com/uxp/migration-center/?aio_external)
+- [Ask questions in the Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/)

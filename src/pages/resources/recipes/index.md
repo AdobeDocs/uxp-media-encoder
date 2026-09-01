@@ -19,7 +19,7 @@ Practical code examples for common UXP patterns
 
 <InlineAlert slots="text"/>
 
-For **UXP Plugins** specific content, please refer to the [Plugins >Tutorials section](../../plugins/index.md).
+For **UXP Plugins** specific content, please refer to [Build Your First Plugin](../../get-started/build-your-first-plugin/index.md).
 
 ## General UXP recipes
 
@@ -57,4 +57,4 @@ Use console logs and dialog methods to debug your plugin quickly
 
 ## Other resources
 
-Find step-by-step guides focused on Plugin-specific development in the [Tutorials section](../../plugins/index.md).
+Find step-by-step guidance for Media Encoder development in [Build Your First Plugin](../../get-started/build-your-first-plugin/index.md).

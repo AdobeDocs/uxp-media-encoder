@@ -1,0 +1,19 @@
+{
+  "total": 3,
+  "offset": 0,
+  "limit": 3,
+  "data": [
+    {
+      "Source": "/media-encoder/uxp/plugins/",
+      "Destination": "/media-encoder/uxp/get-started/build-your-first-plugin/"
+    },
+    {
+      "Source": "/media-encoder/uxp/plugins/sample-plugins/",
+      "Destination": "/media-encoder/uxp/get-started/samples/render-queue-panel/"
+    },
+    {
+      "Source": "/media-encoder/uxp/plugins/migrating/",
+      "Destination": "/media-encoder/uxp/get-started/migrate-to-uxp/"
+    }
+  ]
+}
