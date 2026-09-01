@@ -5,7 +5,7 @@ contributors:
   - https://github.com/karan0207
 ---
 
-<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="rgb(64, 34, 138)"/>
+<Superhero variant="halfWidth" textColor="white" slots="heading, text, image" background="linear-gradient(135deg, #073B3A 0%, #0E6B61 100%)"/>
 
 # Automate Adobe Media Encoder with UXP
 
