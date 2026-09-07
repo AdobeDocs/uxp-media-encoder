@@ -15,7 +15,7 @@ contributors:
 
 # Media Encoder API DOM Reference
 
-The Media Encoder API is the host-specific layer Media Encoder adds on top of UXP: render queues, presets, jobs, watch folders, progress reporting, and the scripting hooks used to automate encoding. For file system access, networking, storage, HTML, CSS, and UI components, use the shared [UXP API reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external).
+The Media Encoder API is the host-specific layer Media Encoder adds on top of UXP: render queues, presets, jobs, watch folders, progress reporting, and the scripting hooks used to automate encoding.
 
 ## Access the API
 
