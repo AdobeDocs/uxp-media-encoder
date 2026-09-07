@@ -1,11 +1,11 @@
 {
-  "total": 3,
+  "total": 8,
   "offset": 0,
-  "limit": 3,
+  "limit": 8,
   "data": [
     {
       "Source": "/media-encoder/uxp/plugins/",
-      "Destination": "/media-encoder/uxp/get-started/build-your-first-plugin/"
+      "Destination": "/media-encoder/uxp/get-started/samples/render-queue-panel/"
     },
     {
       "Source": "/media-encoder/uxp/plugins/sample-plugins/",
@@ -13,7 +13,27 @@
     },
     {
       "Source": "/media-encoder/uxp/plugins/migrating/",
-      "Destination": "/media-encoder/uxp/get-started/migrate-to-uxp/"
+      "Destination": "/media-encoder/uxp/get-started/"
+    },
+    {
+      "Source": "/media-encoder/uxp/get-started/migrate-to-uxp/",
+      "Destination": "/media-encoder/uxp/get-started/"
+    },
+    {
+      "Source": "/media-encoder/uxp/get-started/build-your-first-plugin/",
+      "Destination": "/media-encoder/uxp/get-started/samples/render-queue-panel/"
+    },
+    {
+      "Source": "/media-encoder/uxp/get-started/uxp-developer-journey/",
+      "Destination": "/media-encoder/uxp/get-started/"
+    },
+    {
+      "Source": "/media-encoder/uxp/get-started/tech-stack/",
+      "Destination": "/media-encoder/uxp/get-started/"
+    },
+    {
+      "Source": "/media-encoder/uxp/get-started/nomenclature/",
+      "Destination": "/media-encoder/uxp/get-started/"
     }
   ],
   ":type": "sheet"
