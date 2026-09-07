@@ -2,22 +2,15 @@
     - /media-encoder/uxp/
 
 - pages:
-    - [UXP for Media Encoder](index.md)
+    - [UXP Hub](https://developer-stage.adobe.com/uxp/?aio_external)
+    - [AME](index.md)
     - [Get Started](get-started/index.md)
-    - [Plugins](plugins/index.md)
-    - [UXP API](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
     - [Media Encoder API](media-encoder-api/index.md)
 
 - subPages:
   - [Overview](get-started/index.md)
-  - Essentials header
-  - [Developer Tools](get-started/developer-tools/index.md)
-  - [Tech Stack Foundations](get-started/tech-stack/index.md)
-  - [Nomenclature](get-started/nomenclature/index.md)
-  - Quick-Starter Plugin header
-  - [Build Your First Plugin](plugins/index.md)
-  - Sample Plugins header
-  - [Render Queue Panel](plugins/sample-plugins/index.md)
+  - [Set Up Media Encoder](get-started/developer-tools/index.md)
+  - [Render Queue Panel Example](get-started/samples/render-queue-panel/index.md)
   - [Media Encoder API](media-encoder-api/index.md)
     - [Render Queue](media-encoder-api/render-queue/index.md)
       - [Constants](media-encoder-api/render-queue/index.md#constants)

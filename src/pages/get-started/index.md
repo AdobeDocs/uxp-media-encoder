@@ -1,6 +1,6 @@
 ---
 title: "Get Started: UXP for Adobe Media Encoder"
-description: "Start building UXP plugins and automation for Adobe Media Encoder: the development loop, prerequisites, and the essentials you need before your first panel."
+description: "Set up Media Encoder, build your first UXP plugin, and start working with the Media Encoder API."
 keywords:
   - UXP
   - Adobe Media Encoder
@@ -13,49 +13,16 @@ contributors:
   - https://github.com/karan0207
 ---
 
-# Get Started with UXP for Media Encoder
+# Build for Media Encoder
 
-This section gets you from zero to a running plugin. You write in HTML, CSS, and JavaScript, load your plugin into Media Encoder with the UXP Developer Tool, and call Media Encoder's APIs to drive the encoding queue.
+A Media Encoder plugin is a UXP panel that runs inside Adobe Media Encoder and controls it through the Media Encoder API. From a panel you can add sources to the render queue, apply presets and render settings, start and monitor encodes, and manage watch folders.
+
+The steps below follow the order you will work in: set up the host, run a reference sample to see the API in action, then use the API reference to build your own plugin.
 
 <InlineAlert variant="info" slots="text"/>
 
-UXP for Adobe Media Encoder is in public beta. Load plugins with the UXP Developer Tool, keep Media Encoder running while you develop, and expect APIs and tooling to change.
+UXP for Adobe Media Encoder is in public beta. APIs and tooling may change before general availability.
 
-## The development loop
-
-Three pieces work together, and knowing each role makes every later step easier to reason about:
-
-* **Media Encoder** is the host. Your plugin loads here, its panel renders here, and your code runs here against the Media Encoder APIs.
-* **The UXP Developer Tool (UDT)** is the bridge. It scaffolds your plugin, then loads, reloads, and debugs it inside Media Encoder.
-* **Your code editor** is where you write the HTML, CSS, and JavaScript.
-
-The loop is short: write code, reload in UDT, see the change in Media Encoder, then run an encode and watch it in the queue.
-
-## Prerequisites
-
-* Adobe Media Encoder (beta), installed and running.
-* The UXP Developer Tool (UDT).
-* A code editor, such as VS Code.
-* Helpful but not required: basic HTML and JavaScript.
-
-## Essentials
-
-Read these first if UXP or extensibility is new to you.
-
-<DiscoverBlock slots="link, text"/>
-
-[Developer Tools](developer-tools/index.md)
-
-Install and use the UXP Developer Tool to scaffold, load, hot-reload, and debug your plugin.
-
-<DiscoverBlock slots="link, text"/>
-
-[Tech Stack Foundations](tech-stack/index.md)
-
-The web technologies and the UXP runtime your plugin is built on.
-
-<DiscoverBlock slots="link, text"/>
-
-[Nomenclature](nomenclature/index.md)
-
-The terms used across these docs: plugins, panels, scripts, manifests, and how they map to CEP and ExtendScript.
+1. [Set up Media Encoder](developer-tools/index.md). Check the required versions, enable Developer Mode, and confirm the host loads plugins from the UXP Developer Tool.
+2. [Explore the Render Queue Panel example](samples/render-queue-panel/index.md). Clone, build, and load a working TypeScript panel that exercises the Media Encoder DOM APIs: adding jobs to the render queue, changing render options, and starting, pausing, and stopping renders. It is the fastest way to see how the API behaves before you write your own.
+3. Build your own plugin. Browse the [Media Encoder API reference](../media-encoder-api/index.md) for the render queue, render options, jobs, watch folders, and progress reporting, then wire the same calls into your panel.
