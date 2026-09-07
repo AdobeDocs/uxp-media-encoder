@@ -1,7 +1,7 @@
 {
-  "total": 24,
+  "total": 19,
   "offset": 0,
-  "limit": 24,
+  "limit": 19,
   "data": [
     {
       "page": "/",
@@ -10,7 +10,7 @@
         "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/7/2026"
     },
     {
       "page": "/api/",
@@ -36,21 +36,14 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/7/2026"
     },
     {
       "page": "/get-started/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/build-your-first-plugin/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/7/2026"
     },
     {
       "page": "/get-started/developer-tools/",
@@ -58,43 +51,14 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/migrate-to-uxp/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/nomenclature/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/7/2026"
     },
     {
       "page": "/get-started/samples/render-queue-panel/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/tech-stack/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/uxp-developer-journey/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/7/2026"
     },
     {
       "page": "/media-encoder-api/",
