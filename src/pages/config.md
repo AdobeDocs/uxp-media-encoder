@@ -2,25 +2,15 @@
     - /media-encoder/uxp/
 
 - pages:
-    - [UXP for Media Encoder](index.md)
+    - [UXP Hub](https://developer-stage.adobe.com/uxp/?aio_external)
+    - [AME](index.md)
     - [Get Started](get-started/index.md)
-    - [UXP APIs](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
     - [Media Encoder API](media-encoder-api/index.md)
-    - UXP Hub
-        - [UXP Hub Home](https://developer-stage.adobe.com/uxp/?aio_external)
-        - [Learn and Build](https://developer-stage.adobe.com/uxp/guides/?aio_external)
-        - [Publish Plugins](https://developer-stage.adobe.com/uxp/guides/how-to/distribution/overview/?aio_external)
-        - [Migration Center](https://developer-stage.adobe.com/uxp/migration-center/?aio_external)
 
 - subPages:
   - [Overview](get-started/index.md)
-  - Start with UXP header
-  - [UXP Developer Journey](get-started/uxp-developer-journey/index.md)
-  - [Migrate to UXP](get-started/migrate-to-uxp/index.md)
-  - Start with Media Encoder header
   - [Set Up Media Encoder](get-started/developer-tools/index.md)
-  - [Build Your First Plugin](get-started/build-your-first-plugin/index.md)
-  - [Render Queue Panel](get-started/samples/render-queue-panel/index.md)
+  - [Render Queue Panel Example](get-started/samples/render-queue-panel/index.md)
   - [Media Encoder API](media-encoder-api/index.md)
     - [Render Queue](media-encoder-api/render-queue/index.md)
       - [Constants](media-encoder-api/render-queue/index.md#constants)
