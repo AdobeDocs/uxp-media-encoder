@@ -1,6 +1,6 @@
 ---
 title: "Get Started: UXP for Adobe Media Encoder"
-description: "Choose the right starting path for UXP fundamentals or Adobe Media Encoder-specific plugin development."
+description: "Set up Media Encoder, build your first UXP plugin, and start working with the Media Encoder API."
 keywords:
   - UXP
   - Adobe Media Encoder
@@ -13,46 +13,16 @@ contributors:
   - https://github.com/karan0207
 ---
 
-# Get Started with UXP for Media Encoder
+# Build for Media Encoder
 
-Building for Media Encoder combines two layers: the shared UXP platform and Media Encoder's host-specific APIs. Choose your path based on your UXP experience.
+A Media Encoder plugin is a UXP panel that runs inside Adobe Media Encoder and controls it through the Media Encoder API. From a panel you can add sources to the render queue, apply presets and render settings, start and monitor encodes, and manage watch folders.
+
+The steps below follow the order you will work in: set up the host, run a reference sample to see the API in action, then use the API reference to build your own plugin.
 
 <InlineAlert variant="info" slots="text"/>
 
 UXP for Adobe Media Encoder is in public beta. APIs and tooling may change before general availability.
 
-## Choose Your Starting Point
-
-<Cards slots="image, heading, text, links" repeat="2" width="100%" />
-
-![Learn the shared UXP platform](../images/uxp-tutorials.svg)
-
-### New to UXP?
-
-Begin with the UXP Hub. It covers the shared developer journey: foundations, tools, plugin concepts, building and debugging, migration, and publishing.
-
-[Start with the UXP Developer Journey](uxp-developer-journey/index.md)
-
-![Build plugins for Adobe Media Encoder](../images/media-encoder.svg)
-
-### Already Know UXP?
-
-Go directly to the Media Encoder path: check host requirements, enable Developer Mode, build a plugin, and explore the host API.
-
-[Start with Media Encoder](developer-tools/index.md)
-
-## Recommended Developer Journey
-
-If UXP is new to you:
-
-1. [Learn the shared UXP platform](uxp-developer-journey/index.md) in the UXP Hub.
-2. [Set up Media Encoder](developer-tools/index.md) as your host application.
-3. [Build your first Media Encoder plugin](build-your-first-plugin/index.md).
-4. [Explore the Render Queue Panel](samples/render-queue-panel/index.md) to see host APIs working together.
-5. Use the [Media Encoder API reference](../media-encoder-api/index.md) as you build your own integration.
-
-If you already build UXP plugins for another host, begin at step 2.
-
-## Moving Existing Work
-
-Coming from CEP or ExtendScript? Follow the [migration path](migrate-to-uxp/index.md) before replacing host calls with the Media Encoder API.
+1. [Set up Media Encoder](developer-tools/index.md). Check the required versions, enable Developer Mode, and confirm the host loads plugins from the UXP Developer Tool.
+2. [Explore the Render Queue Panel example](samples/render-queue-panel/index.md). Clone, build, and load a working TypeScript panel that exercises the Media Encoder DOM APIs: adding jobs to the render queue, changing render options, and starting, pausing, and stopping renders. It is the fastest way to see how the API behaves before you write your own.
+3. Build your own plugin. Browse the [Media Encoder API reference](../media-encoder-api/index.md) for the render queue, render options, jobs, watch folders, and progress reporting, then wire the same calls into your panel.
