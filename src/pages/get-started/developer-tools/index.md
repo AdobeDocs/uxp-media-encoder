@@ -17,7 +17,7 @@ contributors:
 
 # Set Up Media Encoder for Development
 
-This page covers the setup that is specific to Media Encoder. For installing a code editor and the UXP Developer Tool (UDT), enabling UDT's Developer Mode, and learning the shared workflow, see [Set Up Developer Tools](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub.
+This page covers only the Media Encoder-specific setup. Install the UXP Developer Tool and a code editor from [Set Up Developer Tools](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub first.
 
 If you already build UXP plugins for another Adobe application, keep your existing tools and complete only the Media Encoder steps below.
 
@@ -28,11 +28,11 @@ If you already build UXP plugins for another Adobe application, keep your existi
 | Adobe Media Encoder | 26.5 |
 | UXP Developer Tool | 2.2.1.18 |
 
-You can use either the stable or beta Media Encoder release when it meets the minimum version required by your plugin's manifest.
+Use either the stable or beta Media Encoder release, as long as it meets the minimum version in your plugin's manifest.
 
 ## Enable Media Encoder Developer Mode
 
-Media Encoder has a Developer Mode setting that is separate from the setting in UDT. Both must be enabled before UDT can load a development plugin into the host.
+Media Encoder has a Developer Mode setting that is separate from the setting in UDT. Enable both before UDT can load a development plugin into the host.
 
 1. Open Media Encoder.
 2. Go to **Edit > Preferences > Plugins**.
@@ -54,4 +54,4 @@ If Media Encoder is unavailable in UDT, confirm the installed versions, Develope
 
 ## Next Step
 
-With Media Encoder ready, [build your first plugin](../build-your-first-plugin/index.md) and load it into the host.
+With Media Encoder ready, [explore the Render Queue Panel example](../samples/render-queue-panel/index.md) to see the Media Encoder DOM APIs in action.
