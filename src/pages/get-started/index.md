@@ -1,5 +1,5 @@
 ---
-title: "Get Started: UXP for Adobe Media Encoder"
+title: Get Started
 description: "Set up Media Encoder, build your first UXP plugin, and start working with the Media Encoder API."
 keywords:
   - UXP
