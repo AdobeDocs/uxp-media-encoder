@@ -1,5 +1,5 @@
 ---
-title: UXP for Adobe Media Encoder
+title: UXP AME
 description: "Build UXP plugins for Adobe Media Encoder: create panels, drive the render queue, and automate batch encoding with HTML, CSS, and JavaScript."
 contributors:
   - https://github.com/karan0207

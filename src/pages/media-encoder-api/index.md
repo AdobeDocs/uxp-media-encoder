@@ -1,5 +1,5 @@
 ---
-title: "Media Encoder API: Reference for UXP Plugins"
+title: Media Encoder API Reference
 description: "Reference for the Adobe Media Encoder APIs your UXP plugin calls: the encoding queue, presets, jobs, and scripting automation."
 keywords:
   - UXP
