@@ -2,7 +2,7 @@
     - /media-encoder/uxp/
 
 - pages:
-    - [UXP Hub](https://developer-stage.adobe.com/uxp/?aio_external)
+    - [UXP Hub](https://developer.adobe.com/uxp/?aio_external)
     - [AME](index.md)
     - [Get Started](get-started/index.md)
     - [Media Encoder API](media-encoder-api/index.md)

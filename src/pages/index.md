@@ -38,7 +38,7 @@ A UXP plugin has two layers. The UXP runtime provides shared platform APIs for f
 
 Walk through the full developer journey: build your first plugin, learn the platform and UXP APIs, and publish plugins.
 
-[Start in the UXP Hub](https://developer-stage.adobe.com/uxp/?aio_external)
+[Start in the UXP Hub](https://developer.adobe.com/uxp/?aio_external)
 
 ![Build plugins for Adobe Media Encoder](images/media-encoder.svg)
 
@@ -60,7 +60,7 @@ The render queue, presets, jobs, progress reporting, watch folders, and other Me
 
 <DiscoverBlock slots="link, text"/>
 
-[UXP API Reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
+[UXP API Reference](https://developer.adobe.com/uxp/uxp-api/?aio_external)
 
 File system, networking, storage, HTML, CSS, and Spectrum UI capabilities shared by every UXP host.
 
