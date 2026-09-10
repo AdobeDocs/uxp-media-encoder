@@ -25,7 +25,7 @@ If you already build UXP plugins for another Adobe application, keep your existi
 
 | Component | Minimum version |
 | --- | --- |
-| Adobe Media Encoder | 26.5 |
+| Adobe Media Encoder | 27.0 |
 | UXP Developer Tool | 2.2.1.18 |
 
 Use either the stable or beta Media Encoder release, as long as it meets the minimum version in your plugin's manifest.
