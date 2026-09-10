@@ -1,5 +1,5 @@
 ---
-title: "Render Queue Panel: Media Encoder UXP Sample"
+title: Render Queue Panel
 description: Clone, build, and load the media-encoder-api sample panel for Adobe Media Encoder, a UXP reference panel for the render queue and render options.
 contributors:
   - https://github.com/karan0207

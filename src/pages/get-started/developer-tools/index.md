@@ -1,5 +1,5 @@
 ---
-title: "Set Up Adobe Media Encoder for UXP Development"
+title: Developer Tools
 description: Enable Developer Mode in Adobe Media Encoder and prepare the host to load plugins from the UXP Developer Tool.
 keywords:
   - UXP
