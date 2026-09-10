@@ -48,6 +48,8 @@ Explore the Media Encoder DOM APIs and build your own plugin.
 
 [Get Started](get-started/index.md)
 
+**Note:** Start with the [UXP Hub](https://developer.adobe.com/uxp/?aio_external) to learn the fundamentals, core concepts, and the plugin development model. Use this Adobe Media Encoder UXP documentation for AME APIs, examples, and workflows. We will keep expanding these resources with more documentation and sample code throughout the beta.
+
 ## Explore APIs
 
 Plugins use both layers: the Media Encoder API for encoding features, and the shared UXP APIs for platform capabilities like file access, storage, and networking.
@@ -68,7 +70,10 @@ File system, networking, storage, HTML, CSS, and Spectrum UI capabilities shared
 
 Join the worldwide community of Creative Cloud Developers building plugins and integrations to empower creativity.
 
-Here are a few other ways to get involved:
+Have questions while developing, or want to share feedback on the UXP documentation, APIs, samples, or other developer resources?
 
-- [Join the Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/) to meet other developers, ask questions, and offer help.
+[Join the conversation in the Creative Cloud Developer Forums](https://forums.creativeclouddeveloper.com/) to connect with other developers, share your experiences, ask questions, and get support from the community.
+
+Want to stay up to date with the latest developer news?
+
 - [Subscribe to the Adobe Creative Cloud Developer Newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html).
