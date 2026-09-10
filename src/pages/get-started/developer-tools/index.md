@@ -1,5 +1,5 @@
 ---
-title: Developer Tools
+title: Setup AME
 description: Enable Developer Mode in Adobe Media Encoder and prepare the host to load plugins from the UXP Developer Tool.
 keywords:
   - UXP
