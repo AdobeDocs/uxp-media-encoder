@@ -15,7 +15,7 @@ Build plugins that run inside Media Encoder, discover presets, and drive the enc
 
 <InlineAlert variant="info" slots="text"/>
 
-UXP for Adobe Media Encoder is in public beta. APIs and supported capabilities may change before general availability.
+UXP for Adobe Media Encoder is in public beta. APIs and supported capabilities may change before general availability. Double-click installation is not available at launch and is expected to follow a few days later as part of the September Creative Cloud Desktop release.
 
 <Resources slots="heading, links"/>
 
