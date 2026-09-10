@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 A `ProgressItem` represents a single item of progress within a [ProgressCategory](../progress-category/index.md), such as one render job's progress within the global render category. `ProgressItem` instances are not constructed directly; obtain one from [ProgressCategory.createProgressItem](../progress-category/index.md#createprogressitem), [createProgressItemWithReferenceId](../progress-category/index.md#createprogressitemwithreferenceid), or [getProgressItemFromReferenceID](../index.md#getprogressitemfromreferenceid).
 
@@ -44,7 +44,7 @@ Normal progress state. Returned by [getProgressState](#getprogressstate) and acc
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -54,7 +54,7 @@ Paused progress state.
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -64,7 +64,7 @@ Resumed progress state.
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -74,7 +74,7 @@ Waiting progress state.
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -84,7 +84,7 @@ Failed progress state.
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -94,7 +94,7 @@ Cancelled progress state.
 
 Type: _number_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -104,7 +104,7 @@ Event ID fired when the progress item's value changes. The event carries `progre
 
 Type: _string_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -114,7 +114,7 @@ Event ID fired when the progress item is cancelled. The event carries a `progres
 
 Type: _string_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -124,7 +124,7 @@ Event ID fired when the progress item's title changes. The event carries `progre
 
 Type: _string_ (readonly, class)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -136,7 +136,7 @@ The reference ID the item was created with, if any.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -146,7 +146,7 @@ The time the progress item was created.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -156,7 +156,7 @@ Since: **26.5**
 
 Gets the current progress value.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -179,7 +179,7 @@ item.getValue();
 
 Gets the maximum progress value.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -202,7 +202,7 @@ item.getMaxValue();
 
 Gets the current status message.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -225,7 +225,7 @@ item.getStatusMessage();
 
 Gets the title of the progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -248,7 +248,7 @@ item.getTitle();
 
 Gets the current progress state.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -271,7 +271,7 @@ item.getProgressState();
 
 Checks whether the progress item is complete.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -294,7 +294,7 @@ item.isComplete();
 
 Checks whether the progress item is currently in progress.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -317,7 +317,7 @@ item.isInProgress();
 
 Checks whether the progress item has been configured as unknown (indeterminate) progress.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -340,7 +340,7 @@ item.isIndeterminateProgress();
 
 Checks whether the progress item is pending.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -363,7 +363,7 @@ item.isPending();
 
 Checks if the progress item can be cancelled.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -386,7 +386,7 @@ item.supportsCancellation();
 
 Checks if the progress item can be paused and resumed.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -409,7 +409,7 @@ item.supportsPauseAndResume();
 
 Cancels this progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -432,7 +432,7 @@ await item.cancelProgress();
 
 Pauses or resumes this progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -457,7 +457,7 @@ await item.pauseOrResumeProgress(app.ProgressItem.PROGRESS_STATE_PAUSED);
 
 Sets the current progress value and max value.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -483,7 +483,7 @@ await item.setProgressStatus(50, 100);
 
 Sets the current progress value, max value, status message, and tooltip.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -511,7 +511,7 @@ await item.setProgressStatusAndToolTip(50, 100, "Encoding...", "Job 1 of 4");
 
 Marks the progress item as having unknown (indeterminate) progress.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -536,7 +536,7 @@ await item.setUnknownProgress("Analyzing...");
 
 Sets the tooltip for the progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -561,7 +561,7 @@ await item.setToolTip("Job 1 of 4");
 
 Sets the status message for the progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -586,7 +586,7 @@ await item.setStatusMessage("Encoding...");
 
 Sets the title of the progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -611,7 +611,7 @@ await item.setTitle("Encoding job 1 (retry)");
 
 Sets the progress state.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -636,7 +636,7 @@ await item.setProgressState(app.ProgressItem.PROGRESS_STATE_CANCELLED);
 
 Sets the tooltip shown for the cancel action on this progress item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -663,7 +663,7 @@ Registers a subscription to a specific event on this progress item.
 
 _Note: addEventListener() is required after a subscribeToEvent() call in order to actually react to an event, the same pattern used by [RenderQueueInstance](../../render-queue/render-queue-instance/index.md#subscribetoevent)._
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

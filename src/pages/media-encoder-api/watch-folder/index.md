@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 The Media Encoder Watch Folder API is the used for all operations involving managing Watch Folders in Media Encoder. A watch folder monitors a source directory and automatically encodes new files using a specified preset.
 
@@ -57,7 +57,7 @@ Retrieves the unique identifier for the progress category for global progress of
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -67,7 +67,7 @@ Event ID for when a watch folder encoder status changes.
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -91,7 +91,7 @@ The unique identifier (GUID) for the watch folder.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -101,7 +101,7 @@ The source path being monitored by the watch folder.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -111,7 +111,7 @@ The preset file path used for encoding.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -121,7 +121,7 @@ The destination path where encoded files are saved.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -131,7 +131,7 @@ Since: **26.5**
 
 Gets an instance of the `WatchFolder` object.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -154,7 +154,7 @@ const watchFolder = app.WatchFolder.getInstance();
 
 Creates a watch folder that monitors the source directory and automatically encodes new files using the specified preset. The watch folder will process any new files added to the source directory and save the encoded output to the destination directory.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -193,7 +193,7 @@ Throws a parameter error if the source path, destination path, or preset path do
 
 Returns an array of all active watch folder objects.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -216,7 +216,7 @@ const watchFolders = app.WatchFolder.getAllWatchFolders();
 
 Removes all active watch folders from the system.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -240,7 +240,7 @@ success; // true
 
 Registers an event handler for the specified event on this `WatchFolder`. The event handling follows the W3C DOM Level 2 Events Specification.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -269,7 +269,7 @@ watchFolder.addEventListener(event, callback);
 
 Unregisters a previously registered event handler for the specified event on this `WatchFolder`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

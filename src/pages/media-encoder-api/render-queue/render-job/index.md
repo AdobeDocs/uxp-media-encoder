@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 A `RenderJob` represents a single job in the render queue. It is obtained via [RenderQueue.getJob](../index.md#getjob), rather than constructed directly.
 
@@ -57,7 +57,7 @@ Work area type value for custom in / out points.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -67,7 +67,7 @@ Work area type value for the default in / out points from the sequence.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -77,7 +77,7 @@ Work area type value for the entire duration of the sequence.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -87,7 +87,7 @@ Work area type value for the set in / out points of the sequence.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -97,7 +97,7 @@ Work area type value for the entire workarea of the sequence.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -107,7 +107,7 @@ Job is waiting to be processed.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -117,7 +117,7 @@ Job is currently encoding.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -127,7 +127,7 @@ Job finished successfully.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -137,7 +137,7 @@ Job finished with warnings.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -147,7 +147,7 @@ Job failed.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -157,7 +157,7 @@ Job is paused.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -167,7 +167,7 @@ Job was stopped.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -177,7 +177,7 @@ Job was skipped.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -187,7 +187,7 @@ The job handle is no longer valid, for example if the job was removed from the q
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -207,7 +207,7 @@ GUID of the job.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -217,7 +217,7 @@ GUID of the containing job group.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -227,7 +227,7 @@ Elapsed encoding time, in seconds.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -237,7 +237,7 @@ Since: **26.5**
 
 Sets custom in and out points in the sequence. Note that the `WORKAREATYPE_CUSTOM` work area type will be set implicitly here.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -266,7 +266,7 @@ job.setCustomInAndOutPoints(startTime, endTime);
 
 Sets the rotation of the job (in a 360-degree system).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -294,7 +294,7 @@ Sets the designated type of work area. Use the `WORKAREATYPE_*` constants to spe
 
 Works only with project files that contain sequences. If the input sequence has a predefined work area or in and out points, this method will set them properly. Note that the custom work area type will only function correctly if you have previously called `setCustomInAndOutPoints`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -320,7 +320,7 @@ job.setWorkAreaType(job.WORKAREATYPE_ENTIRE_SEQUENCE);
 
 Gets the current status of the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -344,7 +344,7 @@ job.getStatus();
 
 Checks whether the job has reached a terminal state (done, failed, or stopped).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -368,7 +368,7 @@ job.isInFinalState();
 
 Gets the encoding progress as a percentage.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -392,7 +392,7 @@ job.getEncodeProgress();
 
 Gets a human-readable progress message for the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -416,7 +416,7 @@ job.getEncodeProgressMessage();
 
 Gets a single-line error string for the job, if it failed.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -440,7 +440,7 @@ job.getErrorText();
 
 Get the log output of the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -464,7 +464,7 @@ job.getLogOutput();
 
 Gets the output file path for the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -488,7 +488,7 @@ job.getOutputFilePath();
 
 Gets the list of files written by the encoder after export completes.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -512,7 +512,7 @@ job.getOutputFilesAfterExport();
 
 Gets the name of the preset applied to this job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -536,7 +536,7 @@ job.getPresetName();
 
 Gets a video format summary string for the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -560,7 +560,7 @@ job.getVideoSummary();
 
 Gets an audio format summary string for the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -584,7 +584,7 @@ job.getAudioSummary();
 
 Gets a bitrate summary string for the job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -608,7 +608,7 @@ job.getBitrateSummary();
 
 Moves this job's containing group to the top of the render queue so it encodes next, raising its priority.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -632,7 +632,7 @@ job.moveToTop();
 
 Returns the [RenderJobGroup](../render-job-group/index.md) that contains this job (its shared source). Use it to add more outputs to the same source via [RenderJobGroup.addOutput](../render-job-group/index.md#addoutput).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

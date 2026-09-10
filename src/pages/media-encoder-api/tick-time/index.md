@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 A `TickTime` represents a precise point in time (or duration), used throughout the Media Encoder scripting API wherever a time value is required, such as [RenderOptions.setCustomInAndOutPoints](../render-options/index.md#setcustominandoutpoints).
 
@@ -53,7 +53,7 @@ A `TickTime` representing zero.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -63,7 +63,7 @@ A `TickTime` representing one second.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -73,7 +73,7 @@ A `TickTime` representing one minute.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -83,7 +83,7 @@ A `TickTime` representing one hour.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -93,7 +93,7 @@ The maximum representable `TickTime`.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -103,7 +103,7 @@ The minimum representable `TickTime`.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -113,7 +113,7 @@ An invalid/sentinel `TickTime` value.
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -133,7 +133,7 @@ The time value in seconds.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -143,7 +143,7 @@ The time value as a ticks string.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -153,7 +153,7 @@ The time value as a ticks number.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -163,7 +163,7 @@ Since: **26.5**
 
 **Class method.** Creates a `TickTime` from a frame count at a given frame rate.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -189,7 +189,7 @@ const time = app.TickTime.createWithFrameAndFrameRate(30, frameRate);
 
 **Class method.** Creates a `TickTime` from a number of seconds.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -215,7 +215,7 @@ const endTime = app.TickTime.createWithSeconds(1);
 
 **Class method.** Creates a `TickTime` from a ticks string.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -240,7 +240,7 @@ const time = app.TickTime.createWithTicks("254016000000");
 
 **Class method.** Creates a `TickTime` from a ticks number.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -265,7 +265,7 @@ const time = app.TickTime.createWithTicksNumber(254016000000);
 
 **Class method.** Converts a timecode display string to a `TickTime`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -292,7 +292,7 @@ const time = app.TickTime.timecodeToTime("00:00:01:00", frameRate, timeDisplay);
 
 **Class method.** Converts a `TickTime` to a timecode display string.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -320,7 +320,7 @@ timecode; // "00:00:01:00"
 
 **Instance method.** Checks whether this `TickTime` is equal to another.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -347,7 +347,7 @@ a.equals(b); // true
 
 **Instance method.** Converts this `TickTime` to a frame number at the given frame rate.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -373,7 +373,7 @@ time.toFrame(frameRate);
 
 **Instance method.** Aligns this `TickTime` to the nearest frame boundary at the given frame rate.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -399,7 +399,7 @@ time.alignToNearestFrame(frameRate);
 
 **Instance method.** Aligns this `TickTime` to a frame boundary at the given frame rate by flooring.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -425,7 +425,7 @@ time.alignToFrame(frameRate);
 
 **Instance method.** Adds another `TickTime` to this one.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -452,7 +452,7 @@ a.add(b); // TickTime representing 3 seconds
 
 **Instance method.** Subtracts another `TickTime` from this one.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -479,7 +479,7 @@ a.subtract(b); // TickTime representing 2 seconds
 
 **Instance method.** Multiplies this `TickTime` by a factor.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -505,7 +505,7 @@ time.multiply(2); // TickTime representing 2 seconds
 
 **Instance method.** Divides this `TickTime` by a divisor.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

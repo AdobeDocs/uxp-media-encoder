@@ -38,7 +38,7 @@ The possible states are: Stopped = 0, Paused = 1, Running = 2, Stopping = 3, Inv
 
 Compare the returned status against the [`RENDER_QUEUE_*` constants](../index.md#constants) on `RenderQueue`, for example `app.RenderQueue.RENDER_QUEUE_RUNNING`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -64,7 +64,7 @@ Registers a subscription to a specific application event on a render queue insta
 
 _Note: addEventLister() is required after a subscribeToEvent() call in order to actually react to an event_
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -100,7 +100,7 @@ Listens for an application-level events and triggers a callback.
 
 _Note: subscribeToEvent() is required at least once for each event time before running addEventListener()_
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -133,7 +133,7 @@ instance.addEventListener(event, callback, false);
 
 Removes an event listener from an application-level event.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

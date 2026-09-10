@@ -24,7 +24,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 The `C2PAService` object provides access to Content Credentials (C2PA) manifest data embedded in, or associated with, a media file. Use [getManifest](#getmanifest) to read the manifest for a given file path.
 
@@ -52,7 +52,7 @@ Content credentials NONE. No manifest found in the provided asset.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -62,7 +62,7 @@ Content credentials EMBEDDED. An embedded manifest was found.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -72,7 +72,7 @@ Content credentials SIDE_CAR. A sidecar manifest was found.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -82,7 +82,7 @@ Content credentials CLOUD. A reference to a cloud manifest was found.
 
 Type: _number_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -94,7 +94,7 @@ Since: **26.5**
 
 **Class method.** Returns an object with `manifest` (JSON string) and `manifestLocation` (number) indicating where the C2PA manifest was found. Location flags: [MANIFEST_LOCATION_NONE](#manifest_location_none) (0), [MANIFEST_LOCATION_EMBEDDED](#manifest_location_embedded) (1), [MANIFEST_LOCATION_SIDE_CAR](#manifest_location_side_car) (2), [MANIFEST_LOCATION_CLOUD](#manifest_location_cloud) (4). If `withValidation` is true, the file will be validated during processing.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

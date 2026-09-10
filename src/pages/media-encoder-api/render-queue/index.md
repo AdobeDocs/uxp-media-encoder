@@ -26,7 +26,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 The Media Encoder Render Queue API is the used for all operations involving managing the app and render queue.
 
@@ -58,7 +58,7 @@ Retrieves the unique identifier for the progress category for global progress of
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -68,7 +68,7 @@ Render queue invalid state.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -78,7 +78,7 @@ Render queue paused state.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -88,7 +88,7 @@ Render queue running state.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -98,7 +98,7 @@ Render queue stopped state.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -108,7 +108,7 @@ Render queue stopping state.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -118,7 +118,7 @@ Validation result when your render job returns an error.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -128,7 +128,7 @@ Validation result when your render job returns successfully.
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -138,7 +138,7 @@ Event ID for when the render queue status changes.
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -148,7 +148,7 @@ Event ID for when the audio preprogress value changes.
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -162,7 +162,7 @@ This method currently supports transcoding for various file types, including med
 
 For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -198,7 +198,7 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 Adds a group of images an image sequence to the render queue. The images will be sorted in alphabetical order by default.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -236,7 +236,7 @@ This method currently supports transcoding for various file types, including med
 
 For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -272,7 +272,7 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -308,7 +308,7 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 Gets an instance of the RenderQueue object.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -330,7 +330,7 @@ instance; // { addEventListener, dispatchEvent, getStatus, removeEventListener, 
 
 Returns a [RenderJob](./render-job/index.md) object for the given job ID, or `null` if no matching job is found in the queue.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -358,7 +358,7 @@ const job = app.RenderQueue.getJob(result.jobId);
 
 Returns a [RenderJobGroup](./render-job-group/index.md) object for the given job group ID, or `null` if no matching group is found in the queue. A group represents a single source and can contain multiple outputs ([RenderJob](./render-job/index.md) objects).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -388,7 +388,7 @@ const group = app.RenderQueue.getJobGroup(result.jobGroupId);
 
 Get the Log Output of a specific render job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -418,7 +418,7 @@ logOutput; // '{"error":"","summary":[],"time":"2026-07-29T10:20:56"}'
 
 Returns a list of missing asests for a specific render job.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -455,7 +455,7 @@ missingAssets; // [
 
 Returns the list of GUIDs for objects ( Premiere sequences or After Effects compositions) at the top/root level.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -481,7 +481,7 @@ res; // { guids: ["7717fd87-1b69-4290-b5b0-4eb990d7afd8"] }
 
 Starts rendering queue. Can be used to continue after a pause.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -505,7 +505,7 @@ success; // true
 
 Stops the complete rendering queue including all rendering items.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -529,7 +529,7 @@ success; // true
 
 Stops the current item, but continues rendering if other items are in the queue.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -553,7 +553,7 @@ success; // true
 
 Pauses the complete rendering queue including all rendering items.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -577,7 +577,7 @@ success; // true
 
 Removes all jobs from the queue. This method can only be called if the rendering is stopped or completed.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

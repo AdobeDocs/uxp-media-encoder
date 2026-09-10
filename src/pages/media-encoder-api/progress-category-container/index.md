@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 The Media Encoder `ProgressCategoryContainer` API provides access to progress categories, such as the global render progress exposed via [RenderQueue.PROGRESS_CATEGORY_ID](../render-queue/index.md#progresscategoryid). Use [getOrCreateProgressCategory](#getorcreateprogresscategory) to obtain a [ProgressCategory](./progress-category/index.md), and use that category to create and manage individual [ProgressItem](./progress-item/index.md) objects.
 
@@ -54,7 +54,7 @@ Event ID fired when a new progress category is added. The event carries a `progr
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -64,7 +64,7 @@ Event ID fired when a progress category is removed. The event carries a `progres
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -74,7 +74,7 @@ Event ID fired when a new progress item is added to a category. The event carrie
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -84,7 +84,7 @@ Event ID fired when a progress item is removed from a category. The event carrie
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -94,7 +94,7 @@ Since: **26.5**
 
 **Class method.** Gets the shared instance of the `ProgressCategoryContainer` object.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -117,7 +117,7 @@ const container = app.ProgressCategoryContainer.getContainer();
 
 Gets an existing progress category by ID, or creates a new one if it doesn't already exist.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -145,7 +145,7 @@ const category = container.getOrCreateProgressCategory(
 
 Gets all currently registered progress categories.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -169,7 +169,7 @@ const categories = container.getAllProgressCategories();
 
 Removes the specified progress category from the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -195,7 +195,7 @@ container.removeProgressCategory(category);
 
 Retrieves a progress item by its reference ID, across all categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -221,7 +221,7 @@ Registers a subscription to a specific container-level event.
 
 _Note: addEventListener() is required after a subscribeToEvent() call in order to actually react to an event, the same pattern used by [RenderQueueInstance](../render-queue/render-queue-instance/index.md#subscribetoevent)._
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -252,7 +252,7 @@ container.addEventListener(event, callback);
 
 Registers an event handler for the specified event on this `ProgressCategoryContainer`. The event handling follows the W3C DOM Level 2 Events Specification.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -282,7 +282,7 @@ container.addEventListener(event, callback);
 
 Unregisters a previously registered event handler for the specified event on this `ProgressCategoryContainer`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -308,7 +308,7 @@ container.removeEventListener(event, callback);
 
 Checks whether any progress category in the container has completed jobs.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -332,7 +332,7 @@ container.hasDoneJobs();
 
 Removes completed progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -356,7 +356,7 @@ container.removeDoneJobs();
 
 Pauses all progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -380,7 +380,7 @@ await container.pauseAllProgressItems();
 
 Resumes all paused progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

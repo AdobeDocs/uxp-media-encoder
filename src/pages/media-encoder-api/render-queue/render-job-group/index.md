@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 A `RenderJobGroup` represents a single source (media file or project) in the render queue that can drive multiple outputs. Use it to add more outputs that share the same source via [addOutput](#addoutput), and to enumerate the outputs already in the group via [getOutputs](#getoutputs). Each output is returned as a [RenderJob](../render-job/index.md).
 
@@ -51,7 +51,7 @@ GUID of this render job group (its source). Matches [RenderJob.groupID](../rende
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -61,7 +61,7 @@ Since: **26.5**
 
 Adds another output to this group's shared source using the given preset and output path, and returns the new [RenderJob](../render-job/index.md). Per-output settings (work area, custom in/out points, rotation) are applied on the returned `RenderJob`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -86,7 +86,7 @@ const newOutput = group.addOutput("path/to/other-preset.epr", "path/to/other-out
 
 Returns the [RenderJob](../render-job/index.md) outputs currently contained in this group.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -110,7 +110,7 @@ const outputs = group.getOutputs();
 
 Returns the number of outputs currently contained in this group.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -134,7 +134,7 @@ group.getOutputCount();
 
 Returns the GUID of this render job group (its source). Equivalent to the [id](#id) property.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

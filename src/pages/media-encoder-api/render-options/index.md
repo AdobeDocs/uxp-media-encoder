@@ -53,7 +53,7 @@ Work area type value for custom in / out points
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -63,7 +63,7 @@ Work area type value for the default in / out points from the sequence
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -73,7 +73,7 @@ Work area type value for the entire duration of the sequence
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -83,7 +83,7 @@ Work area type value for the set in / out points of the sequence
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -93,7 +93,7 @@ Work area type value for the entire workarea of the sequence
 
 Type: _int_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -113,7 +113,7 @@ The custom in point set via `setCustomInAndOutPoints()`, as a [TickTime](../tick
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -123,7 +123,7 @@ The custom out point set via `setCustomInAndOutPoints()`, as a [TickTime](../tic
 
 Type: _object_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -133,7 +133,7 @@ The rotation value (in a 360-degree system) set via `setRotation()`. Undefined i
 
 Type: _number (optional)_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -143,7 +143,7 @@ The work area type set via `setWorkAreaType()`. One of the `WORKAREATYPE_*` cons
 
 Type: _int_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -153,7 +153,7 @@ Since: **26.5**
 
 Sets custom in and out points in the sequence. Note that the `WORKAREATYPE_CUSTOM` work area type will be set implicitly here.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -184,7 +184,7 @@ See the [TickTime](../tick-time/index.md) reference for how to construct these v
 
 Sets the "Import Sequences Natively" flag, which allows Media Encoder to import sequences directly from a Premiere Pro project file without needing to open Premiere Pro.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -210,7 +210,7 @@ renderOptions.setImportSequencesNatively(true);
 
 Sets whether source XMP metadata is included in the output. Default is `false`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -236,7 +236,7 @@ renderOptions.setIncludeSourceXMP(true);
 
 Controls overwrite behavior for the output file. If set to `true`, the specified output file path will be overwritten. If set to `false`, the global overwrite preference is respected.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -262,7 +262,7 @@ renderOptions.setOverwriteOutputFile(true);
 
 Sets the rotation of the render options instance (in a 360-degree system).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -288,7 +288,7 @@ renderOptions.setRotation(45); // Rotate 45 degrees
 
 Sets the sequence or composition to render.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -317,7 +317,7 @@ Sets the designated type of work area. Use the `WORKAREATYPE_*` constants to spe
 
 Works only with project files that contain sequences. If the input sequence has a predefined work area or in and out points, this method will set them properly. Note that the custom work area type will only function correctly if you have previously called `setCustomInAndOutPoints`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
