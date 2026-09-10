@@ -6,11 +6,11 @@
     {
       "page": "/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/8/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/api/",
@@ -36,7 +36,7 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/7/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/get-started/",
@@ -48,17 +48,18 @@
     {
       "page": "/get-started/developer-tools/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4"
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/7/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/get-started/samples/render-queue-panel/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/7/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/media-encoder-api/",
