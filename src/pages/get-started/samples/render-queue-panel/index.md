@@ -96,7 +96,7 @@ If you only changed `index.html` and no `.ts` files, `npm run copy` plus a reloa
 
 Click **Debug** in UDT next to the loaded plugin to open a Chromium DevTools window connected to your panel, with the console, network tab, sources, and DOM inspector. The panel's built-in console area also logs each button's result directly in the UI.
 
-For breakpoints, watch expressions, error handling, and other shared techniques, see [Debug Your Plugin](https://developer-stage.adobe.com/uxp/guides/how-to/debugging/?aio_external) in the UXP Hub.
+For breakpoints, watch expressions, error handling, and other shared techniques, see [Debug Your Plugin](https://developer.adobe.com/uxp/guides/how-to/debugging/?aio_external) in the UXP Hub.
 
 ## Troubleshooting
 
@@ -120,6 +120,6 @@ UDT's Watch mode only reloads source files. After editing `manifest.json`, do an
 
 - [Media Encoder API reference](../../../media-encoder-api/index.md)
 - [Set Up Media Encoder](../../developer-tools/index.md)
-- [TypeScript setup](https://developer-stage.adobe.com/uxp/guides/how-to/typescript/?aio_external)
-- [UXP API reference](https://developer-stage.adobe.com/uxp/uxp-api/?aio_external)
+- [TypeScript setup](https://developer.adobe.com/uxp/guides/how-to/typescript/?aio_external)
+- [UXP API reference](https://developer.adobe.com/uxp/uxp-api/?aio_external)
 - [uxp-media-encoder-plugin-samples on GitHub](https://github.com/AdobeDocs/uxp-media-encoder-plugin-samples)

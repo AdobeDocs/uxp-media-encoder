@@ -17,7 +17,7 @@ contributors:
 
 # Set Up Media Encoder for Development
 
-This page covers only the Media Encoder-specific setup. Install the UXP Developer Tool and a code editor from [Set Up Developer Tools](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub first.
+This page covers only the Media Encoder-specific setup. Install the UXP Developer Tool and a code editor from [Set Up Developer Tools](https://developer.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub first.
 
 If you already build UXP plugins for another Adobe application, keep your existing tools and complete only the Media Encoder steps below.
 
