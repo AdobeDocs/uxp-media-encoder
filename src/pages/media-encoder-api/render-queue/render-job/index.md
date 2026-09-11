@@ -1,5 +1,5 @@
 ---
-title: "RenderJob: Media Encoder API"
+title: RenderJob Media Encoder API
 description: "Media Encoder's RenderJob API for inspecting and managing an individual job in the render queue."
 id: renderJob
 title: RenderJob

@@ -1,5 +1,5 @@
 ---
-title: "RenderJobGroup: Media Encoder API"
+title: RenderJobGroup Media Encoder API
 description: "Media Encoder's RenderJobGroup API for adding and enumerating multiple outputs that share the same render queue source."
 id: renderJobGroup
 title: RenderJobGroup

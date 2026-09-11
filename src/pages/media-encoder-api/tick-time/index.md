@@ -1,5 +1,5 @@
 ---
-title: "TickTime: Media Encoder API"
+title: TickTime Media Encoder API
 description: "Media Encoder's TickTime API for representing and manipulating time values used by RenderOptions and other scripting objects."
 id: tickTime
 title: TickTime
