@@ -1,5 +1,5 @@
 ---
-title: "Render Options: Media Encoder API"
+title: Render Options Media Encoder API
 description: "Media Encoder's Render Options APIs for adding, modifying, and enquing items for render."
 id: renderOptions
 title: RenderOptions

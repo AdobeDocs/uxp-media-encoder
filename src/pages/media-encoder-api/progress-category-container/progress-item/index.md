@@ -1,5 +1,5 @@
 ---
-title: "ProgressItem: Media Encoder API"
+title: ProgressItem Media Encoder API
 description: "Media Encoder's ProgressItem API for reading and updating an individual progress item's value, status, and state."
 id: progressItem
 title: ProgressItem

@@ -1,5 +1,5 @@
 ---
-title: "Render Queue Instance: Media Encoder API"
+title: Render Queue Instance Media Encoder API
 description: "Media Encoder's Queue Instance APIs for adding, modifying, and enquing items for render."
 id: renderQueueInstance
 title: RenderQueueInstance

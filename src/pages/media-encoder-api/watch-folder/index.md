@@ -1,5 +1,5 @@
 ---
-title: "Watch Folder: Media Encoder API"
+title: Watch Folder Media Encoder API
 description: "Media Encoder's Watch Folder APIs for creating and managing watch folders that automatically encode new files."
 id: watchFolder
 title: WatchFolder

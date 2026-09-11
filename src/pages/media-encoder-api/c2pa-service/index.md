@@ -1,5 +1,5 @@
 ---
-title: "C2PAService: Media Encoder API"
+title: C2PAService Media Encoder API
 description: "Media Encoder's C2PAService API for reading Content Credentials (C2PA) manifests from media files."
 id: c2paService
 title: C2PAService

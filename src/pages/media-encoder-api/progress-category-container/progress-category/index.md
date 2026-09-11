@@ -1,5 +1,5 @@
 ---
-title: "ProgressCategory: Media Encoder API"
+title: ProgressCategory Media Encoder API
 description: "Media Encoder's ProgressCategory API for managing a category of progress items."
 id: progressCategory
 title: ProgressCategory
