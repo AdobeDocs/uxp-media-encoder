@@ -227,7 +227,7 @@ Since: **27.0**
 
 | Name     | Type     | Description                                                                                                                                          |
 | :------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_CATEGORY_ADDED](#eventprogresscategoryadded), [EVENT_PROGRESS_CATEGORY_REMOVED](#eventprogresscategoryremoved), [EVENT_PROGRESS_ITEM_ADDED](#eventprogressitemadded), [EVENT_PROGRESS_ITEM_REMOVED](#eventprogressitemremoved) |
+| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_CATEGORY_ADDED](#event_progress_category_added), [EVENT_PROGRESS_CATEGORY_REMOVED](#event_progress_category_removed), [EVENT_PROGRESS_ITEM_ADDED](#event_progress_item_added), [EVENT_PROGRESS_ITEM_REMOVED](#event_progress_item_removed) |
 
 #### Returns
 

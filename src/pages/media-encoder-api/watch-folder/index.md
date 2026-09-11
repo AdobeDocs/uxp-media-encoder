@@ -246,7 +246,7 @@ Since: **27.0**
 
 | Name      | Type       | Description                                                                                                     |
 | :-------- | :--------- | :----------------------------------------------------------------------------------------------------------------- |
-| eventType | _string_   | The event to listen for, such as [WATCH_FOLDER_ENCODER_STATUS_CHANGED](#watchfolderencoderstatuschanged)      |
+| eventType | _string_   | The event to listen for, such as [WATCH_FOLDER_ENCODER_STATUS_CHANGED](#watch_folder_encoder_status_changed)      |
 | handler   | _function_ | A function to be triggered when the specified event occurs                                                       |
 
 #### Returns

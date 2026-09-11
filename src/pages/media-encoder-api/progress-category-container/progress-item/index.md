@@ -669,7 +669,7 @@ Since: **27.0**
 
 | Name     | Type     | Description                                                                                                                                     |
 | :------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_ITEM_VALUE_CHANGED](#eventprogressitemvaluechanged), [EVENT_PROGRESS_ITEM_CANCELLED](#eventprogressitemcancelled), [EVENT_PROGRESS_ITEM_TITLE_CHANGED](#eventprogressitemtitlechanged) |
+| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_ITEM_VALUE_CHANGED](#event_progress_item_value_changed), [EVENT_PROGRESS_ITEM_CANCELLED](#event_progress_item_cancelled), [EVENT_PROGRESS_ITEM_TITLE_CHANGED](#event_progress_item_title_changed) |
 
 #### Returns
 
