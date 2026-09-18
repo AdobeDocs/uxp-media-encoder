@@ -32,7 +32,7 @@ A UXP plugin has two layers. The UXP runtime provides shared platform APIs for f
 
 <Cards slots="image, heading, text, links" repeat="2" width="100%" />
 
-![Learn the shared UXP platform](images/uxp-tutorials.svg)
+![UXP Developer Tool](images/udt.svg)
 
 ### Learn the UXP platform
 
