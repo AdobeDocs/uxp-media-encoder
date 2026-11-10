@@ -12,6 +12,7 @@ keywords:
   - progress
   - ProgressItem
   - scripting automation
+  - setType
 
 
 contributors:
@@ -100,7 +101,13 @@ Since: **27.0**
 
 ### EVENT_PROGRESS_ITEM_VALUE_CHANGED
 
-Event ID fired when the progress item's value changes. The event carries `progressItem`, `status`, and `value` properties.
+Event ID fired when the progress item's value changes. The listener receives a `ProgressItemValueChangedEvent` object with the following properties:
+
+| Name         | Type                       | Description                                                                                         |
+| :----------- | :------------------------- | :-------------------------------------------------------------------------------------------------- |
+| progressItem | [ProgressItem](./index.md) | The progress item whose value changed                                                            |
+| status       | _string_                   | The status message of the progress item                                                             |
+| value        | _string_                   | The new progress value as a string. Convert it with `Number(event.value)` and compare it with [getMaxValue](#getmaxvalue) |
 
 Type: _string_ (readonly, class)
 
@@ -110,7 +117,11 @@ Since: **27.0**
 
 ### EVENT_PROGRESS_ITEM_CANCELLED
 
-Event ID fired when the progress item is cancelled. The event carries a `progressItem` property.
+Event ID fired when the progress item is cancelled. The listener receives a `ProgressItemCancelledEvent` object with the following property:
+
+| Name         | Type                          | Description                          |
+| :----------- | :---------------------------- | :----------------------------------- |
+| progressItem | [ProgressItem](./index.md) | The progress item that was cancelled |
 
 Type: _string_ (readonly, class)
 
@@ -120,7 +131,12 @@ Since: **27.0**
 
 ### EVENT_PROGRESS_ITEM_TITLE_CHANGED
 
-Event ID fired when the progress item's title changes. The event carries `progressItem` and `title` properties.
+Event ID fired when the progress item's title changes. The listener receives a `ProgressItemTitleChangedEvent` object with the following properties:
+
+| Name         | Type                          | Description                              |
+| :----------- | :---------------------------- | :--------------------------------------- |
+| progressItem | [ProgressItem](./index.md) | The progress item whose title changed    |
+| title        | _string_                      | The new title                            |
 
 Type: _string_ (readonly, class)
 
@@ -132,9 +148,9 @@ Since: **27.0**
 
 ### referenceId
 
-The reference ID the item was created with, if any.
+The reference ID of the progress item. For an item created with [createProgressItemWithReferenceId](../progress-category/index.md#createprogressitemwithreferenceid), this is the reference ID you passed. Otherwise, Media Encoder generates a unique ID. If the progress item no longer exists, this is the all-zero GUID `00000000-0000-0000-0000-000000000000`.
 
-Type: _object_ (readonly)
+Type: [Guid](../../guid/index.md) (readonly)
 
 Since: **27.0**
 
@@ -653,6 +669,32 @@ Since: **27.0**
 ```javascript
 const app = require("mediaencoder");
 await item.setCancelToolTip("Cancel this job");
+```
+
+<HorizontalLine />
+
+### setType
+
+Sets the type of the progress item. The type is a GUID that your plugin defines, so that you can tell your own kinds of progress items apart.
+
+Since: **27.0**
+
+#### Parameters
+
+| Name | Type                         | Description                                                                                      |
+| :--- | :--------------------------- | :----------------------------------------------------------------------------------------------- |
+| type | [Guid](../../guid/index.md) | The type of the progress item, created with [Guid.fromString](../../guid/index.md#fromstring)   |
+
+#### Returns
+
+| Name    | Type      | Description                                                                 |
+| :------ | :-------- | :-------------------------------------------------------------------------- |
+| success | _boolean_ | Returns `true` if the type was set, `false` if the progress item no longer exists |
+
+```javascript
+const app = require("mediaencoder");
+const item = category.createProgressItem("Uploading renders");
+await item.setType(app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d")); // true
 ```
 
 <HorizontalLine />

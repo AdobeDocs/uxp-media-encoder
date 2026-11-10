@@ -271,7 +271,7 @@ Since: **27.0**
 
 | Name            | Type     | Description             |
 | :--------------- | :------- | :------------------------ |
-| timecodeString   | _string_ | The timecode string to convert |
+| timecode         | _string_ | The timecode string to convert |
 | frameRate        | _object_ | A FrameRate object      |
 | timeDisplay      | _object_ | A TimeDisplay object    |
 

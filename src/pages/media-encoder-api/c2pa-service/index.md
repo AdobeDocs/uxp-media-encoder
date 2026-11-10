@@ -90,6 +90,27 @@ Since: **27.0**
 
 <HorizontalLine />
 
+### getInstance
+
+**Class method.** Gets an instance of the `C2PAService` object. You don't need an instance to read manifests: [getManifest](#getmanifest) and the constants are class members, so call them on `app.C2PAService`.
+
+Since: **27.0**
+
+#### Parameters
+
+none
+
+#### Returns
+
+The `C2PAService` instance.
+
+```javascript
+const app = require("mediaencoder");
+const c2paService = app.C2PAService.getInstance();
+```
+
+<HorizontalLine />
+
 ### getManifest
 
 **Class method.** Returns an object with `manifest` (JSON string) and `manifestLocation` (number) indicating where the C2PA manifest was found. Location flags: [MANIFEST_LOCATION_NONE](#manifest_location_none) (0), [MANIFEST_LOCATION_EMBEDDED](#manifest_location_embedded) (1), [MANIFEST_LOCATION_SIDE_CAR](#manifest_location_side_car) (2), [MANIFEST_LOCATION_CLOUD](#manifest_location_cloud) (4). If `withValidation` is true, the file will be validated during processing.
