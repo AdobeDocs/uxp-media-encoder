@@ -88,7 +88,7 @@ Since: **27.0**
 | Name        | Type     | Description                                |
 | :----------- | :------- | :---------------------------------------------- |
 | title       | _string_ | The title for the new progress item             |
-| referenceId | _object_ | A GUID object used to look the item up later    |
+| referenceId | [Guid](../../guid/index.md) | A GUID object used to look the item up later    |
 
 #### Returns
 
@@ -96,9 +96,10 @@ Since: **27.0**
 
 ```javascript
 const app = require("mediaencoder");
+const referenceId = app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d");
 const item = category.createProgressItemWithReferenceId(
   "Encoding job 1",
-  referenceGuid,
+  referenceId,
 );
 ```
 
@@ -137,7 +138,7 @@ Since: **27.0**
 
 | Name          | Type     | Description                             |
 | :------------ | :------- | :----------------------------------------- |
-| referenceGuid | _object_ | The reference GUID the item was created with |
+| referenceGuid | [Guid](../../guid/index.md) | The reference GUID the item was created with |
 
 #### Returns
 
@@ -145,7 +146,8 @@ Since: **27.0**
 
 ```javascript
 const app = require("mediaencoder");
-const item = category.getProgressItemFromReferenceID(referenceGuid);
+const referenceId = app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d");
+const item = category.getProgressItemFromReferenceID(referenceId);
 ```
 
 <HorizontalLine />

@@ -70,7 +70,7 @@ Since: **27.0**
 
 | Name    | Type     | Description                                                                                                                                                                                                                                                                                    |
 | :------ | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId | _string_ | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId | _string_ | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 |         |
 
 #### Returns
@@ -106,9 +106,9 @@ Since: **27.0**
 
 | Name     | Type       | Description                                                                                                                                                                                                                                                                                     |
 | :------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId  | _string_   | The event ID to subscribe to. Can include: [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId  | _string_   | The event ID to subscribe to. Can include: [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 | callback | _function_ | A function to be triggered on when the specified event occurs                                                                                                                                                                                                                                   |
-| unkown   | _boolean_  | TODO                                                                                                                                                                                                                                                                                            |
+| capture  | _boolean (optional)_ | `true` to call the listener during the capture phase. Also accepts an options object with a `capture` property. Defaults to `false` |
 
 #### Returns
 
@@ -139,8 +139,9 @@ Since: **27.0**
 
 | Name     | Type       | Description                                                                                                                                                                                                                                                                                    |
 | :------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId  | _string_   | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId  | _string_   | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 | callback | _function_ | A function to be removed from the event listener                                                                                                                                                                                                                                               |
+| capture  | _boolean (optional)_ | Must match the `capture` value used in [addEventListener](#addeventlistener). Defaults to `false` |
 
 #### Returns
 

@@ -159,8 +159,8 @@ Since: **27.0**
 
 | Name                  | Type     | Description                            |
 | :-------------------- | :------- | :------------------------------------- |
-| startPositionTickTime | _object_ | TickTime object for the start position |
-| endPositionTickTime   | _object_ | TickTime object for the end position   |
+| startPositionTickTime | [TickTime](../tick-time/index.md) | TickTime object for the start position |
+| endPositionTickTime   | [TickTime](../tick-time/index.md) | TickTime object for the end position   |
 
 #### Returns
 
@@ -268,7 +268,7 @@ Since: **27.0**
 
 | Name          | Type  | Description                              |
 | :------------ | :---- | :--------------------------------------- |
-| rotationValue | _int_ | The rotation value between 0-360 degrees |
+| rotationValue | _number_ | The rotation value between 0-360 degrees |
 
 #### Returns
 
@@ -280,33 +280,6 @@ Since: **27.0**
 const app = require("mediaencoder");
 const renderOptions = new app.RenderOptions();
 renderOptions.setRotation(45); // Rotate 45 degrees
-```
-
-<HorizontalLine />
-
-### setSequenceGUID
-
-Sets the sequence or composition to render.
-
-Since: **27.0**
-
-#### Parameters
-
-| Name | Type     | Description                                                                                                                                                    |
-| :--- | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| guid | _string_ | The unique ID of a sequence or a composition. Use [getProjectItemGUIDs](../render-queue/index.md#getprojectitemguids) on `RenderQueue` to retrieve the GUIDs. |
-
-#### Returns
-
-| Name          | Type     | Description                      |
-| :------------ | :------- | :------------------------------- |
-| renderOptions | _object_ | The updated renderOptions object |
-
-```javascript
-const app = require("mediaencoder");
-const renderOptions = new app.RenderOptions();
-const res = app.RenderQueue.getProjectItemGUIDs("path/to/project.prproj");
-renderOptions.setSequenceGUID(res.guids[0]);
 ```
 
 <HorizontalLine />

@@ -13,6 +13,8 @@ keywords:
   - presets
   - jobs
   - scripting automation
+  - renderProjectItem
+  - getProjectItems
 
 
 contributors:
@@ -136,6 +138,12 @@ Since: **27.0**
 
 Event ID for when the render queue status changes.
 
+The listener receives a `RenderQueueEvent` object with the following property:
+
+| Name   | Type  | Description                                                                                                   |
+| :----- | :---- | :------------------------------------------------------------------------------------------------------------ |
+| status | _int_ | The new status of the render queue, one of the `RENDER_QUEUE_*` constants, such as [RENDER_QUEUE_RUNNING](#render_queue_running) |
+
 Type: _string_
 
 Since: **27.0**
@@ -146,9 +154,88 @@ Since: **27.0**
 
 Event ID for when the audio preprogress value changes.
 
+The listener receives a `RenderQueueAudioPreProgressValueChangedEvent` object with the following properties:
+
+| Name           | Type     | Description                                 |
+| :------------- | :------- | :------------------------------------------ |
+| jobId          | _string_ | The ID of the job                           |
+| inProgressText | _string_ | The progress text to display                |
+| value          | _number_ | The progress, from `0.0` to `1.0`           |
+
 Type: _string_
 
 Since: **27.0**
+
+<HorizontalLine />
+
+### NEXT_JOB_ENCODING_EVENT
+
+Event ID fired when the next job in the render queue is about to start encoding. Subscribe to it on the [render queue instance](./render-queue-instance/index.md#subscribetoevent).
+
+The listener receives a `RenderNextJobEvent` object with the following property:
+
+| Name  | Type     | Description                                                   |
+| :---- | :------- | :------------------------------------------------------------ |
+| jobId | _string_ | The ID of the job, use it with [getJob](#getjob)              |
+
+Type: _string_
+
+Since: **27.0**
+
+```javascript
+const app = require("mediaencoder");
+const instance = app.RenderQueue.getInstance();
+const event = app.RenderQueue.NEXT_JOB_ENCODING_EVENT;
+instance.subscribeToEvent(event);
+instance.addEventListener(event, (nextJobEvent) => {
+  const job = app.RenderQueue.getJob(nextJobEvent.jobId);
+  console.log("Encoding started:", job.getOutputFilePath());
+});
+```
+
+<HorizontalLine />
+
+### MEDIA_ITEM_CREATED_EVENT
+
+Event ID fired when Media Encoder has created the source media of a job, as part of preparing the job for encoding. Subscribe to it on the [render queue instance](./render-queue-instance/index.md#subscribetoevent).
+
+The listener receives a `RenderMediaInfoCreatedEvent` object with the following property:
+
+| Name  | Type     | Description                                      |
+| :---- | :------- | :----------------------------------------------- |
+| jobId | _string_ | The ID of the job, use it with [getJob](#getjob) |
+
+Type: _string_
+
+Since: **27.0**
+
+<HorizontalLine />
+
+### ENCODE_COMPLETE_EVENT
+
+Event ID fired when a job has finished encoding. Subscribe to it on the [render queue instance](./render-queue-instance/index.md#subscribetoevent).
+
+The listener receives a `RenderQueueEncodeCompleteEvent` object with the following properties:
+
+| Name           | Type      | Description                                                         |
+| :------------- | :-------- | :------------------------------------------------------------------ |
+| jobId          | _string_  | The ID of the job, use it with [getJob](#getjob)                    |
+| isOkToMoveFile | _boolean_ | `true` if the source file of the job can now be moved or deleted    |
+
+Type: _string_
+
+Since: **27.0**
+
+```javascript
+const app = require("mediaencoder");
+const instance = app.RenderQueue.getInstance();
+const event = app.RenderQueue.ENCODE_COMPLETE_EVENT;
+instance.subscribeToEvent(event);
+instance.addEventListener(event, (encodeCompleteEvent) => {
+  const job = app.RenderQueue.getJob(encodeCompleteEvent.jobId);
+  console.log("Finished:", job.getOutputFilePath());
+});
+```
 
 <HorizontalLine />
 
@@ -160,7 +247,7 @@ Enqueues a media source with a given RenderOptions object but does NOT start the
 
 This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, and Adobe After Effects project files.
 
-For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
+For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, use [enqueueProjectItem](#enqueueprojectitem).
 
 Since: **27.0**
 
@@ -171,6 +258,7 @@ Since: **27.0**
 | filePath       | _string_ | File path to the media source |
 | presetFilePath | _string_ | File path to the preset file  |
 | outputPath     | _string_ | File path to the output file  |
+| renderOptions  | [RenderOptions](../render-options/index.md) (optional) | Render settings to apply to the job before the queue starts |
 
 #### Returns
 
@@ -181,6 +269,8 @@ Since: **27.0**
 | message    | _string_ | Result message of enqueue action     |
 | outputPath | _string_ | File path to the output file         |
 | result     | _number_ | 0 = success, 1 = error               |
+
+The Promise is rejected with `{ result, message }` if a file or folder doesn't exist or the job can't be added to the queue.
 
 ```javascript
 const app = require("mediaencoder");
@@ -205,7 +295,7 @@ Since: **27.0**
 | Name                 | Type                | Description                                                                                                                                  |
 | :------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------- |
 | containingFolderPath | _string_            | The folder containing image files for the sequence                                                                                           |
-| firstImageFilePath   | _string_            | The file to use as the first image file, the extension of this image path will be used in this function to filter the files in the directory |
+| imageFilePath        | _string_            | The file to use as the first image file, the extension of this image path will be used in this function to filter the files in the directory |
 | presetFilePath       | _string_            | File path to the preset file                                                                                                                 |
 | outputFilePath       | _string (optional)_ | If outputPath is empty, then the output file name will be generated based on the containingFolderPath name                                   |
 
@@ -228,13 +318,52 @@ success; // true
 
 <HorizontalLine />
 
+### enqueueProjectItem
+
+Adds a specific sequence from a Premiere Pro project, or a specific composition from an After Effects project, to the render queue, but does not start the queue. Call [start](#start) to begin rendering, or use [renderProjectItem](#renderprojectitem) to add and start in one step.
+
+Use [getProjectItems](#getprojectitems) to look up the IDs of the sequences or compositions in a project.
+
+Since: **27.0**
+
+#### Parameters
+
+| Name           | Type                                                   | Description                                                                          |
+| :------------- | :----------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| projectPath    | _string_                                               | File path to the Premiere Pro or After Effects project                               |
+| projectItemId  | _string_                                               | ID of the sequence or composition, as returned by [getProjectItems](#getprojectitems) |
+| presetFilePath | _string_                                               | File path to the preset (`.epr`) file                                                |
+| outputPath     | _string_                                               | File path to the output file                                                         |
+| renderOptions  | [RenderOptions](../render-options/index.md) (optional) | Render settings to apply to the job before the queue starts                          |
+
+#### Returns
+
+A Promise that resolves with the same result object as [enqueueFile](#enqueuefile): `{ jobGroupId, jobId, message, outputPath, result }`.
+
+The Promise is rejected with `{ result, message }` if `projectItemId` is empty, `projectPath` is not a project file, a file or folder doesn't exist, or the job can't be added to the queue.
+
+```javascript
+const app = require("mediaencoder");
+const projectPath = "path/to/project.prproj";
+const items = await app.RenderQueue.getProjectItems(projectPath);
+const result = await app.RenderQueue.enqueueProjectItem(
+  projectPath,
+  items[0].id,
+  "path/to/preset.epr",
+  "path/to/out.mp4",
+);
+result; // { jobGroupId: string, jobId: string, message: string, outputPath: string, result: number }
+```
+
+<HorizontalLine />
+
 ### renderFile
 
 Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
 
 This method currently supports transcoding for various file types, including media files, Adobe Premiere project files, and Adobe After Effects project files.
 
-For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, see `getProjectItemGUIDs()` and [setSequenceGUID()](../render-options/index.md#setsequenceguid).
+For Premiere & After Effects projects, the first sequence or comp will be added to the queue. In order to specify a different sequence or comp for rendering, use [renderProjectItem](#renderprojectitem).
 
 Since: **27.0**
 
@@ -245,6 +374,7 @@ Since: **27.0**
 | filePath       | _string_ | File path to the media source |
 | presetFilePath | _string_ | File path to the preset file  |
 | outputPath     | _string_ | File path to the output file  |
+| renderOptions  | [RenderOptions](../render-options/index.md) (optional) | Render settings to apply to the job before the queue starts |
 
 #### Returns
 
@@ -255,6 +385,8 @@ Since: **27.0**
 | message    | _string_ | Result message of enqueue action     |
 | outputPath | _string_ | File path to the output file         |
 | result     | _number_ | 0 = success, 1 = error               |
+
+The Promise is rejected with `{ result, message }` if a file or folder doesn't exist or the job can't be added to the queue.
 
 ```javascript
 const app = require("mediaencoder");
@@ -268,9 +400,49 @@ result; // { jobGroupId: string, jobId: string, message: string, outputPath: str
 
 <HorizontalLine />
 
+### renderProjectItem
+
+Adds a specific sequence from a Premiere Pro project, or a specific composition from an After Effects project, to the render queue, and starts the queue. To add the item without starting the queue, use [enqueueProjectItem](#enqueueprojectitem).
+
+Use [getProjectItems](#getprojectitems) to look up the IDs of the sequences or compositions in a project.
+
+Since: **27.0**
+
+#### Parameters
+
+| Name           | Type                                                   | Description                                                                          |
+| :------------- | :----------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| projectPath    | _string_                                               | File path to the Premiere Pro or After Effects project                               |
+| projectItemId  | _string_                                               | ID of the sequence or composition, as returned by [getProjectItems](#getprojectitems) |
+| presetFilePath | _string_                                               | File path to the preset (`.epr`) file                                                |
+| outputPath     | _string_                                               | File path to the output file                                                         |
+| renderOptions  | [RenderOptions](../render-options/index.md) (optional) | Render settings to apply to the job before the queue starts                          |
+
+#### Returns
+
+A Promise that resolves with the same result object as [enqueueFile](#enqueuefile): `{ jobGroupId, jobId, message, outputPath, result }`.
+
+The Promise is rejected with `{ result, message }` if `projectItemId` is empty, `projectPath` is not a project file, a file or folder doesn't exist, or the job can't be added to the queue.
+
+```javascript
+const app = require("mediaencoder");
+const projectPath = "path/to/project.prproj";
+const items = await app.RenderQueue.getProjectItems(projectPath);
+const sequence = items.find((item) => item.name === "Final Cut");
+const result = await app.RenderQueue.renderProjectItem(
+  projectPath,
+  sequence.id,
+  "path/to/preset.epr",
+  "path/to/out.mp4",
+);
+result; // { jobGroupId: string, jobId: string, message: string, outputPath: string, result: number }
+```
+
+<HorizontalLine />
+
 ### stitchFiles
 
-Enqueues and immediately renders a media source with the queue to render using a specified source file, preset, and output directory.
+Stitches a list of media files together into a single output and adds it to the render queue as one job. Call [start](#start) to begin rendering.
 
 Since: **27.0**
 
@@ -278,8 +450,8 @@ Since: **27.0**
 
 | Name           | Type       | Description                      |
 | :------------- | :--------- | :------------------------------- |
-| filePathArray  | _string[]_ | Array of media source file paths |
-| presetFilePath | _string_   | File path to the preset file     |
+| filePaths      | _string[]_ | Array of media source file paths |
+| presetPath     | _string_   | File path to the preset file     |
 | outputPath     | _string_   | File path to the output file     |
 
 #### Returns
@@ -291,6 +463,8 @@ Since: **27.0**
 | message    | _string_ | Result message of enqueue action     |
 | outputPath | _string_ | File path to the output file         |
 | result     | _number_ | 0 = success, 1 = error               |
+
+The Promise is rejected with `{ result, message }` if a file or folder doesn't exist or the files can't be stitched.
 
 ```javascript
 const app = require("mediaencoder");
@@ -426,8 +600,8 @@ Since: **27.0**
 | :------------ | :------- | :--------------------------------------------------- |
 | jobGroupId    | _string_ | The job group ID for the current job                 |
 | jobId         | _string_ | The job ID for the current job                       |
-| includeSource | _string_ | Get missing asset from the source group if requested |
-| includeOutput | _string_ | Get missing asset from the the job if requested      |
+| includeSource | _boolean_ | Get missing asset from the source group if requested |
+| includeOutput | _boolean_ | Get missing asset from the the job if requested      |
 
 #### Returns
 
@@ -451,28 +625,36 @@ missingAssets; // [
 
 <HorizontalLine />
 
-### getProjectItemGUIDs
+### getProjectItems
 
-Returns the list of GUIDs for objects ( Premiere sequences or After Effects compositions) at the top/root level.
+Returns the sequences of a Premiere Pro project, or the compositions of an After Effects project, at the top level of the project. Pass an item's `id` to [renderProjectItem](#renderprojectitem) or [enqueueProjectItem](#enqueueprojectitem) to render that item.
+
+Item names are not guaranteed to be unique, so use the `id` to identify an item.
 
 Since: **27.0**
 
 #### Parameters
 
-| Name        | Type     | Description                                        |
-| :---------- | :------- | :------------------------------------------------- |
-| projectPath | _string_ | Path to the Premiere or After Effects project file |
+| Name        | Type     | Description                                            |
+| :---------- | :------- | :----------------------------------------------------- |
+| projectPath | _string_ | File path to the Premiere Pro or After Effects project |
 
 #### Returns
 
-| Name  | Type     | Description                                                                                               |
-| :---- | :------- | :-------------------------------------------------------------------------------------------------------- |
-| guids | _object_ | Object containing a _guids_ property containing an array of GUID strings for the relevant project item(s) |
+A Promise that resolves with an array of objects with the following properties:
+
+| Name | Type     | Description                                                                        |
+| :--- | :------- | :--------------------------------------------------------------------------------- |
+| id   | _string_ | ID of the sequence or composition                                                  |
+| name | _string_ | Name of the sequence or composition                                                |
+| type | _string_ | `"sequence"` for Premiere Pro projects, `"composition"` for After Effects projects |
+
+The Promise is rejected with `{ result, message }` if the file doesn't exist, isn't a project file, or can't be loaded.
 
 ```javascript
 const app = require("mediaencoder");
-const res = app.RenderQueue.getProjectItemGUIDs("path/to/project.prproj");
-res; // { guids: ["7717fd87-1b69-4290-b5b0-4eb990d7afd8"] }
+const items = await app.RenderQueue.getProjectItems("path/to/project.prproj");
+items; // [{ id: "7717fd87-1b69-4290-b5b0-4eb990d7afd8", name: "Sequence 01", type: "sequence" }]
 ```
 
 <HorizontalLine />

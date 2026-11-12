@@ -12,6 +12,8 @@ keywords:
   - watch folder
   - encoding queue
   - scripting automation
+  - addOutput
+  - WatchFolderOutput
 
 
 contributors:
@@ -48,7 +50,7 @@ All Constants can be accessed via the `WatchFolder` object:
 const app = require("mediaencoder");
 const WatchFolder = app.WatchFolder;
 const WATCH_FOLDER_ENCODER_STATUS_CHANGED =
-  WatchFolder.WATCH_FOLDER_ENCODER_STATUS_CHANGED; // "AMEProgressCategoryRender"
+  WatchFolder.WATCH_FOLDER_ENCODER_STATUS_CHANGED; // "WatchFolderStatusEvent"
 ```
 
 ### PROGRESS_CATEGORY_ID
@@ -65,6 +67,12 @@ Since: **27.0**
 
 Event ID for when a watch folder encoder status changes.
 
+The listener receives a `WatchFolderStatusEvent` object with the following property:
+
+| Name   | Type  | Description                                                                                                                 |
+| :----- | :---- | :-------------------------------------------------------------------------------------------------------------------------- |
+| status | _int_ | The new status of the watch folder encoder. Uses the same values as the [RENDER_QUEUE_* constants](../render-queue/index.md#constants) |
+
 Type: _string_
 
 Since: **27.0**
@@ -77,7 +85,7 @@ These read-only properties are available on a watch folder object, such as the o
 
 ```javascript
 const app = require("mediaencoder");
-const watchFolder = app.WatchFolder.createWatchFolder(
+const watchFolder = await app.WatchFolder.createWatchFolder(
   "path/to/source",
   "path/to/destination",
   "path/to/preset.epr",
@@ -177,7 +185,7 @@ A watch folder item object with the following read-only properties:
 
 ```javascript
 const app = require("mediaencoder");
-const watchFolder = app.WatchFolder.createWatchFolder(
+const watchFolder = await app.WatchFolder.createWatchFolder(
   "path/to/source",
   "path/to/destination",
   "path/to/preset.epr",
@@ -185,7 +193,7 @@ const watchFolder = app.WatchFolder.createWatchFolder(
 watchFolder; // { id, filePath, presetPath, destinationPath }
 ```
 
-Throws a parameter error if the source path, destination path, or preset path does not exist or is invalid, or if the preset uses an unsupported HEVC encoding format (when called from a non-first-party context).
+The Promise is rejected with an error message if the source path, destination path, or preset path does not exist or is invalid, or if the preset uses an unsupported HEVC encoding format (when called from a non-first-party context).
 
 <HorizontalLine />
 
@@ -207,7 +215,7 @@ none
 
 ```javascript
 const app = require("mediaencoder");
-const watchFolders = app.WatchFolder.getAllWatchFolders();
+const watchFolders = await app.WatchFolder.getAllWatchFolders();
 ```
 
 <HorizontalLine />
@@ -230,8 +238,128 @@ none
 
 ```javascript
 const app = require("mediaencoder");
-const success = app.WatchFolder.removeAllWatchFolders();
+const success = await app.WatchFolder.removeAllWatchFolders();
 success; // true
+```
+
+<HorizontalLine />
+
+### addOutput
+
+Adds another output to this watch folder. Each output has its own preset and destination folder, so a single watch folder can encode every new file into several formats. Ingest presets are not supported.
+
+Call this method on a watch folder object, such as one returned by [createWatchFolder](#createwatchfolder) or [getAllWatchFolders](#getallwatchfolders).
+
+Since: **27.0**
+
+#### Parameters
+
+| Name            | Type     | Description                                                          |
+| :-------------- | :------- | :------------------------------------------------------------------- |
+| presetPath      | _string_ | The full path to the preset file (`*.epr`) to use for the new output |
+| destinationPath | _string_ | The path where the output's encoded files are saved                  |
+
+#### Returns
+
+A Promise that resolves with a [WatchFolderOutput](./watch-folder-output/index.md) describing the new output.
+
+The Promise is rejected with an error message if the destination folder doesn't exist, if the preset file is missing, can't be read, is an ingest preset, or uses an unsupported HEVC encoding format (when called from a non-first-party context), if the watch folder no longer exists, or if the output can't be added.
+
+```javascript
+const app = require("mediaencoder");
+const watchFolder = await app.WatchFolder.createWatchFolder(
+  "path/to/source",
+  "path/to/destination",
+  "path/to/preset.epr",
+);
+const output = await watchFolder.addOutput("path/to/other-preset.epr", "path/to/other-destination");
+output; // { id, presetPath, destinationPath }
+```
+
+<HorizontalLine />
+
+### getOutputs
+
+Returns the outputs of this watch folder. Call this method on a watch folder object.
+
+Since: **27.0**
+
+#### Parameters
+
+none
+
+#### Returns
+
+| Name    | Type       | Description                                                          |
+| :------ | :--------- | :------------------------------------------------------------------- |
+| outputs | _object[]_ | Array of [WatchFolderOutput](./watch-folder-output/index.md) objects |
+
+The Promise resolves with an empty array if the watch folder no longer exists.
+
+```javascript
+const app = require("mediaencoder");
+const [watchFolder] = await app.WatchFolder.getAllWatchFolders();
+const outputs = await watchFolder.getOutputs();
+outputs.forEach((output) => console.log(output.id, output.destinationPath));
+```
+
+<HorizontalLine />
+
+### removeOutput
+
+Removes an output from this watch folder. Call this method on a watch folder object.
+
+Since: **27.0**
+
+#### Parameters
+
+| Name     | Type     | Description                                                                    |
+| :------- | :------- | :----------------------------------------------------------------------------- |
+| outputId | _string_ | The `id` of the [WatchFolderOutput](./watch-folder-output/index.md) to remove |
+
+#### Returns
+
+| Name   | Type      | Description                              |
+| :----- | :-------- | :--------------------------------------- |
+| result | _boolean_ | Returns `true` if the output was removed |
+
+The Promise is rejected with an error message if `outputId` is empty, the watch folder no longer exists, or the output can't be removed.
+
+```javascript
+const app = require("mediaencoder");
+const [watchFolder] = await app.WatchFolder.getAllWatchFolders();
+const [output] = await watchFolder.getOutputs();
+await watchFolder.removeOutput(output.id); // true
+```
+
+<HorizontalLine />
+
+### subscribeToEvent
+
+Registers a subscription to a watch folder event. After subscribing, call [addEventListener](#addeventlistener) to react to the event.
+
+Since: **27.0**
+
+#### Parameters
+
+| Name     | Type     | Description                                                                                                         |
+| :------- | :------- | :------------------------------------------------------------------------------------------------------------------ |
+| eventKey | _string_ | The event ID to subscribe to: [WATCH_FOLDER_ENCODER_STATUS_CHANGED](#watch_folder_encoder_status_changed)            |
+
+#### Returns
+
+| Name    | Type      | Description                                                                          |
+| :------ | :-------- | :----------------------------------------------------------------------------------- |
+| success | _boolean_ | Returns `true` if subscription was successful, `false` if `eventKey` is not a watch folder event |
+
+```javascript
+const app = require("mediaencoder");
+const watchFolder = app.WatchFolder.getInstance();
+const event = app.WatchFolder.WATCH_FOLDER_ENCODER_STATUS_CHANGED;
+watchFolder.subscribeToEvent(event); // true
+watchFolder.addEventListener(event, (statusEvent) => {
+  console.log("Watch folder encoder status:", statusEvent.status);
+});
 ```
 
 <HorizontalLine />
@@ -248,6 +376,7 @@ Since: **27.0**
 | :-------- | :--------- | :----------------------------------------------------------------------------------------------------------------- |
 | eventType | _string_   | The event to listen for, such as [WATCH_FOLDER_ENCODER_STATUS_CHANGED](#watch_folder_encoder_status_changed)      |
 | handler   | _function_ | A function to be triggered when the specified event occurs                                                       |
+| capture   | _boolean (optional)_ | `true` to call the handler during the capture phase. Also accepts an options object with a `capture` property. Defaults to `false` |
 
 #### Returns
 
@@ -257,6 +386,7 @@ none
 const app = require("mediaencoder");
 const watchFolder = app.WatchFolder.getInstance();
 const event = app.WatchFolder.WATCH_FOLDER_ENCODER_STATUS_CHANGED;
+watchFolder.subscribeToEvent(event);
 const callback = (statusEvent) => {
   console.log("Watch Folder Encoder Status Changed", statusEvent.status);
 };
@@ -277,6 +407,7 @@ Since: **27.0**
 | :-------- | :--------- | :------------------------------------------------------ |
 | eventType | _string_   | The event to stop listening for                        |
 | handler   | _function_ | The previously registered callback to remove             |
+| capture   | _boolean (optional)_ | Must match the `capture` value used in [addEventListener](#addeventlistener). Defaults to `false` |
 
 #### Returns
 
@@ -286,6 +417,7 @@ none
 const app = require("mediaencoder");
 const watchFolder = app.WatchFolder.getInstance();
 const event = app.WatchFolder.WATCH_FOLDER_ENCODER_STATUS_CHANGED;
+watchFolder.subscribeToEvent(event);
 const callback = (statusEvent) => {
   console.log("Watch Folder Encoder Status Changed", statusEvent.status);
 };
