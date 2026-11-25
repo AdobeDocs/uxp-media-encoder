@@ -1,5 +1,5 @@
 ---
-title: "Set Up Adobe Media Encoder for UXP Development"
+title: Setup AME
 description: Enable Developer Mode in Adobe Media Encoder and prepare the host to load plugins from the UXP Developer Tool.
 keywords:
   - UXP
@@ -17,7 +17,7 @@ contributors:
 
 # Set Up Media Encoder for Development
 
-This page covers only the Media Encoder-specific setup. Install the UXP Developer Tool and a code editor from [Set Up Developer Tools](https://developer-stage.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub first.
+This page covers only the Media Encoder-specific setup. Install the UXP Developer Tool and a code editor from [Set Up Developer Tools](https://developer.adobe.com/uxp/guides/how-to/developer-tools/?aio_external) in the UXP Hub first.
 
 If you already build UXP plugins for another Adobe application, keep your existing tools and complete only the Media Encoder steps below.
 
@@ -25,7 +25,7 @@ If you already build UXP plugins for another Adobe application, keep your existi
 
 | Component | Minimum version |
 | --- | --- |
-| Adobe Media Encoder | 26.5 |
+| Adobe Media Encoder | 27.0 |
 | UXP Developer Tool | 2.2.1.18 |
 
 Use either the stable or beta Media Encoder release, as long as it meets the minimum version in your plugin's manifest.

@@ -23,6 +23,6 @@ The steps below follow the order you will work in: set up the host, run a refere
 
 UXP for Adobe Media Encoder is in public beta. APIs and tooling may change before general availability.
 
-1. [Set up Media Encoder](developer-tools/index.md). Check the required versions, enable Developer Mode, and confirm the host loads plugins from the UXP Developer Tool.
-2. [Explore the Render Queue Panel example](samples/render-queue-panel/index.md). Clone, build, and load a working TypeScript panel that exercises the Media Encoder DOM APIs: adding jobs to the render queue, changing render options, and starting, pausing, and stopping renders. It is the fastest way to see how the API behaves before you write your own.
-3. Build your own plugin. Browse the [Media Encoder API reference](../media-encoder-api/index.md) for the render queue, render options, jobs, watch folders, and progress reporting, then wire the same calls into your panel.
+1. [Set up Media Encoder](developer-tools/index.md): Check the required versions, enable Developer Mode, and confirm the host can load plugins from the UXP Developer Tool.
+2. [Explore the Render Queue Panel example](samples/render-queue-panel/index.md): Clone, build, and load a working TypeScript panel that exercises the Media Encoder DOM APIs by adding jobs to the render queue, changing render options, and starting, pausing, and stopping renders. It is the fastest way to see how the API behaves before you build your own.
+3. [Media Encoder APIs](../media-encoder-api/index.md): Browse the reference for the render queue, render options, jobs, watch folders, and progress reporting, then apply the same calls in your own panel.

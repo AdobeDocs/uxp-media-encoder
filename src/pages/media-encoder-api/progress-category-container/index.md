@@ -1,5 +1,5 @@
 ---
-title: "ProgressCategoryContainer: Media Encoder API"
+title: ProgressCategoryContainer Media Encoder API
 description: "Media Encoder's ProgressCategoryContainer API for accessing and managing progress categories and progress items."
 id: progressCategoryContainer
 title: ProgressCategoryContainer
@@ -25,9 +25,9 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
-The Media Encoder `ProgressCategoryContainer` API provides access to progress categories, such as the global render progress exposed via [RenderQueue.PROGRESS_CATEGORY_ID](../render-queue/index.md#progresscategoryid). Use [getOrCreateProgressCategory](#getorcreateprogresscategory) to obtain a [ProgressCategory](./progress-category/index.md), and use that category to create and manage individual [ProgressItem](./progress-item/index.md) objects.
+The Media Encoder `ProgressCategoryContainer` API provides access to progress categories, such as the global render progress exposed via [RenderQueue.PROGRESS_CATEGORY_ID](../render-queue/index.md#progress_category_id). Use [getOrCreateProgressCategory](#getorcreateprogresscategory) to obtain a [ProgressCategory](./progress-category/index.md), and use that category to create and manage individual [ProgressItem](./progress-item/index.md) objects.
 
 The `ProgressCategoryContainer` class can be accessed from the main app object. Call [getContainer](#getcontainer) to obtain the shared container instance:
 
@@ -50,41 +50,59 @@ const EVENT_PROGRESS_CATEGORY_ADDED =
 
 ### EVENT_PROGRESS_CATEGORY_ADDED
 
-Event ID fired when a new progress category is added. The event carries a `progressCategory` property.
+Event ID fired when a new progress category is added. The listener receives a `ProgressCategoryAddedEvent` object with the following property:
+
+| Name             | Type                                                   | Description                    |
+| :--------------- | :----------------------------------------------------- | :----------------------------- |
+| progressCategory | [ProgressCategory](./progress-category/index.md)       | The category that was added    |
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
 ### EVENT_PROGRESS_CATEGORY_REMOVED
 
-Event ID fired when a progress category is removed. The event carries a `progressCategory` property.
+Event ID fired when a progress category is removed. The listener receives a `ProgressCategoryRemovedEvent` object with the following property:
+
+| Name             | Type                                                   | Description                    |
+| :--------------- | :----------------------------------------------------- | :----------------------------- |
+| progressCategory | [ProgressCategory](./progress-category/index.md)       | The category that was removed  |
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
 ### EVENT_PROGRESS_ITEM_ADDED
 
-Event ID fired when a new progress item is added to a category. The event carries `progressCategory` and `progressItem` properties.
+Event ID fired when a new progress item is added to a category. The listener receives a `ProgressItemAddedEvent` object with the following properties:
+
+| Name             | Type                                             | Description                         |
+| :--------------- | :----------------------------------------------- | :---------------------------------- |
+| progressCategory | [ProgressCategory](./progress-category/index.md) | The category the item was added to  |
+| progressItem     | [ProgressItem](./progress-item/index.md)         | The progress item that was added    |
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
 ### EVENT_PROGRESS_ITEM_REMOVED
 
-Event ID fired when a progress item is removed from a category. The event carries `progressCategory` and `progressItem` properties.
+Event ID fired when a progress item is removed from a category. The listener receives a `ProgressItemRemovedEvent` object with the following properties:
+
+| Name             | Type                                             | Description                              |
+| :--------------- | :----------------------------------------------- | :--------------------------------------- |
+| progressCategory | [ProgressCategory](./progress-category/index.md) | The category the item was removed from   |
+| progressItem     | [ProgressItem](./progress-item/index.md)         | The progress item that was removed       |
 
 Type: _string_
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -94,7 +112,7 @@ Since: **26.5**
 
 **Class method.** Gets the shared instance of the `ProgressCategoryContainer` object.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -117,7 +135,7 @@ const container = app.ProgressCategoryContainer.getContainer();
 
 Gets an existing progress category by ID, or creates a new one if it doesn't already exist.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -145,7 +163,7 @@ const category = container.getOrCreateProgressCategory(
 
 Gets all currently registered progress categories.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -169,7 +187,7 @@ const categories = container.getAllProgressCategories();
 
 Removes the specified progress category from the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -195,13 +213,13 @@ container.removeProgressCategory(category);
 
 Retrieves a progress item by its reference ID, across all categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name          | Type     | Description                                                 |
 | :------------ | :------- | :--------------------------------------------------------------- |
-| referenceGuid | _object_ | The reference GUID the item was created with, see [createProgressItemWithReferenceId](./progress-category/index.md#createprogressitemwithreferenceid) |
+| referenceGuid | [Guid](../guid/index.md) | The reference GUID the item was created with, see [createProgressItemWithReferenceId](./progress-category/index.md#createprogressitemwithreferenceid) |
 
 #### Returns
 
@@ -210,7 +228,8 @@ Since: **26.5**
 ```javascript
 const app = require("mediaencoder");
 const container = app.ProgressCategoryContainer.getContainer();
-const item = container.getProgressItemFromReferenceID(referenceGuid);
+const referenceId = app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d");
+const item = container.getProgressItemFromReferenceID(referenceId);
 ```
 
 <HorizontalLine />
@@ -221,13 +240,13 @@ Registers a subscription to a specific container-level event.
 
 _Note: addEventListener() is required after a subscribeToEvent() call in order to actually react to an event, the same pattern used by [RenderQueueInstance](../render-queue/render-queue-instance/index.md#subscribetoevent)._
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name     | Type     | Description                                                                                                                                          |
 | :------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_CATEGORY_ADDED](#eventprogresscategoryadded), [EVENT_PROGRESS_CATEGORY_REMOVED](#eventprogresscategoryremoved), [EVENT_PROGRESS_ITEM_ADDED](#eventprogressitemadded), [EVENT_PROGRESS_ITEM_REMOVED](#eventprogressitemremoved) |
+| eventKey | _string_ | The event ID to subscribe to, one of [EVENT_PROGRESS_CATEGORY_ADDED](#event_progress_category_added), [EVENT_PROGRESS_CATEGORY_REMOVED](#event_progress_category_removed), [EVENT_PROGRESS_ITEM_ADDED](#event_progress_item_added), [EVENT_PROGRESS_ITEM_REMOVED](#event_progress_item_removed) |
 
 #### Returns
 
@@ -252,7 +271,7 @@ container.addEventListener(event, callback);
 
 Registers an event handler for the specified event on this `ProgressCategoryContainer`. The event handling follows the W3C DOM Level 2 Events Specification.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -282,7 +301,7 @@ container.addEventListener(event, callback);
 
 Unregisters a previously registered event handler for the specified event on this `ProgressCategoryContainer`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -308,7 +327,7 @@ container.removeEventListener(event, callback);
 
 Checks whether any progress category in the container has completed jobs.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -332,7 +351,7 @@ container.hasDoneJobs();
 
 Removes completed progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -356,7 +375,7 @@ container.removeDoneJobs();
 
 Pauses all progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -380,7 +399,7 @@ await container.pauseAllProgressItems();
 
 Resumes all paused progress items across all progress categories in the container.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

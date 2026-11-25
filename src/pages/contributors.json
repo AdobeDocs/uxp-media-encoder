@@ -1,56 +1,33 @@
 {
-  "total": 24,
+  "total": 21,
   "offset": 0,
-  "limit": 24,
+  "limit": 21,
   "data": [
     {
       "page": "/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/api/",
-      "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "6/30/2026"
-    },
-    {
-      "page": "/api/1-4",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/14320591?v=4"
-      ],
-      "lastUpdated": "6/30/2026"
+      "lastUpdated": "9/18/2026"
     },
     {
       "page": "/config",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
-        "https://avatars.githubusercontent.com/u/31863114?v=4",
         "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/31863114?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/get-started/",
       "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/build-your-first-plugin/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/get-started/developer-tools/",
@@ -58,78 +35,76 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/migrate-to-uxp/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/nomenclature/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/get-started/samples/render-queue-panel/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/tech-stack/",
-      "avatars": [
         "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4"
       ],
-      "lastUpdated": "9/1/2026"
-    },
-    {
-      "page": "/get-started/uxp-developer-journey/",
-      "avatars": [
-        "https://avatars.githubusercontent.com/u/123291197?v=4"
-      ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "9/10/2026"
     },
     {
       "page": "/media-encoder-api/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "9/1/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/c2pa-service/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "11/10/2026"
+    },
+    {
+      "page": "/media-encoder-api/guid/",
+      "avatars": [
         "https://avatars.githubusercontent.com/u/129856403?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
+    },
+    {
+      "page": "/media-encoder-api/preset-manager/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/129856403?v=4"
+      ],
+      "lastUpdated": "11/10/2026"
+    },
+    {
+      "page": "/media-encoder-api/preset-manager/preset/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/129856403?v=4"
+      ],
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/progress-category-container/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/129856403?v=4"
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/progress-category-container/progress-category/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/129856403?v=4"
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/progress-category-container/progress-item/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/129856403?v=4"
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/render-options/",
@@ -137,7 +112,7 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/render-queue/",
@@ -145,21 +120,23 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/render-queue/render-job-group/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/129856403?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "9/11/2026"
     },
     {
       "page": "/media-encoder-api/render-queue/render-job/",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/129856403?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "9/11/2026"
     },
     {
       "page": "/media-encoder-api/render-queue/render-queue-instance/",
@@ -167,14 +144,15 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/tick-time/",
       "avatars": [
-        "https://avatars.githubusercontent.com/u/129856403?v=4"
+        "https://avatars.githubusercontent.com/u/129856403?v=4",
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
     },
     {
       "page": "/media-encoder-api/watch-folder/",
@@ -182,7 +160,14 @@
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
-      "lastUpdated": "8/24/2026"
+      "lastUpdated": "11/10/2026"
+    },
+    {
+      "page": "/media-encoder-api/watch-folder/watch-folder-output/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/129856403?v=4"
+      ],
+      "lastUpdated": "11/10/2026"
     }
   ],
   ":type": "sheet"

@@ -1,5 +1,5 @@
 ---
-title: "Render Queue Instance: Media Encoder API"
+title: Render Queue Instance Media Encoder API
 description: "Media Encoder's Queue Instance APIs for adding, modifying, and enquing items for render."
 id: renderQueueInstance
 title: RenderQueueInstance
@@ -38,7 +38,7 @@ The possible states are: Stopped = 0, Paused = 1, Running = 2, Stopping = 3, Inv
 
 Compare the returned status against the [`RENDER_QUEUE_*` constants](../index.md#constants) on `RenderQueue`, for example `app.RenderQueue.RENDER_QUEUE_RUNNING`.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -64,13 +64,13 @@ Registers a subscription to a specific application event on a render queue insta
 
 _Note: addEventLister() is required after a subscribeToEvent() call in order to actually react to an event_
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name    | Type     | Description                                                                                                                                                                                                                                                                                    |
 | :------ | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId | _string_ | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId | _string_ | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 |         |
 
 #### Returns
@@ -100,15 +100,15 @@ Listens for an application-level events and triggers a callback.
 
 _Note: subscribeToEvent() is required at least once for each event time before running addEventListener()_
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name     | Type       | Description                                                                                                                                                                                                                                                                                     |
 | :------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId  | _string_   | The event ID to subscribe to. Can include: [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId  | _string_   | The event ID to subscribe to. Can include: [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 | callback | _function_ | A function to be triggered on when the specified event occurs                                                                                                                                                                                                                                   |
-| unkown   | _boolean_  | TODO                                                                                                                                                                                                                                                                                            |
+| capture  | _boolean (optional)_ | `true` to call the listener during the capture phase. Also accepts an options object with a `capture` property. Defaults to `false` |
 
 #### Returns
 
@@ -133,14 +133,15 @@ instance.addEventListener(event, callback, false);
 
 Removes an event listener from an application-level event.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name     | Type       | Description                                                                                                                                                                                                                                                                                    |
 | :------- | :--------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| eventId  | _string_   | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#renderqueuestatuschanged), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audiopreprogressvaluechanged), [WATCH_FOLDER_ENCODER_STATUS_CHANGED](../../watch-folder/index.md#watchfolderencoderstatuschanged) |
+| eventId  | _string_   | The event ID to subscribe to. Can include [RENDER_QUEUE_STATUS_CHANGED](../index.md#render_queue_status_changed), [AUDIO_PREPROGRESS_VALUE_CHANGED](../index.md#audio_preprogress_value_changed), [NEXT_JOB_ENCODING_EVENT](../index.md#next_job_encoding_event), [MEDIA_ITEM_CREATED_EVENT](../index.md#media_item_created_event), [ENCODE_COMPLETE_EVENT](../index.md#encode_complete_event) |
 | callback | _function_ | A function to be removed from the event listener                                                                                                                                                                                                                                               |
+| capture  | _boolean (optional)_ | Must match the `capture` value used in [addEventListener](#addeventlistener). Defaults to `false` |
 
 #### Returns
 

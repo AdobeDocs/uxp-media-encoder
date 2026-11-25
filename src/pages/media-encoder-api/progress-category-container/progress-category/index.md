@@ -1,5 +1,5 @@
 ---
-title: "ProgressCategory: Media Encoder API"
+title: ProgressCategory Media Encoder API
 description: "Media Encoder's ProgressCategory API for managing a category of progress items."
 id: progressCategory
 title: ProgressCategory
@@ -25,7 +25,7 @@ contributors:
 
 UXP for Adobe Media Encoder is in public beta. This reference is being written, and the supported API surface may change before general availability.
 
-Since: **26.5**
+Since: **27.0**
 
 A `ProgressCategory` represents a category of progress items, such as the global render progress category. `ProgressCategory` instances are not constructed directly; obtain one from [ProgressCategoryContainer.getOrCreateProgressCategory](../index.md#getorcreateprogresscategory) or [getAllProgressCategories](../index.md#getallprogresscategories).
 
@@ -48,7 +48,7 @@ The unique category ID.
 
 Type: _string_ (readonly)
 
-Since: **26.5**
+Since: **27.0**
 
 <HorizontalLine />
 
@@ -58,7 +58,7 @@ Since: **26.5**
 
 Creates a new [ProgressItem](../progress-item/index.md) with the given title.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -81,14 +81,14 @@ const item = category.createProgressItem("Encoding job 1");
 
 Creates a new [ProgressItem](../progress-item/index.md) with the given title and reference ID, so it can be looked up later via [getProgressItemFromReferenceID](#getprogressitemfromreferenceid).
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name        | Type     | Description                                |
 | :----------- | :------- | :---------------------------------------------- |
 | title       | _string_ | The title for the new progress item             |
-| referenceId | _object_ | A GUID object used to look the item up later    |
+| referenceId | [Guid](../../guid/index.md) | A GUID object used to look the item up later    |
 
 #### Returns
 
@@ -96,9 +96,10 @@ Since: **26.5**
 
 ```javascript
 const app = require("mediaencoder");
+const referenceId = app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d");
 const item = category.createProgressItemWithReferenceId(
   "Encoding job 1",
-  referenceGuid,
+  referenceId,
 );
 ```
 
@@ -108,7 +109,7 @@ const item = category.createProgressItemWithReferenceId(
 
 Gets all the progress items in this progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -131,13 +132,13 @@ const items = category.getProgressItems();
 
 Retrieves a progress item by its reference ID.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
 | Name          | Type     | Description                             |
 | :------------ | :------- | :----------------------------------------- |
-| referenceGuid | _object_ | The reference GUID the item was created with |
+| referenceGuid | [Guid](../../guid/index.md) | The reference GUID the item was created with |
 
 #### Returns
 
@@ -145,7 +146,8 @@ Since: **26.5**
 
 ```javascript
 const app = require("mediaencoder");
-const item = category.getProgressItemFromReferenceID(referenceGuid);
+const referenceId = app.Guid.fromString("6f1c2b7e-3d4a-4f5b-9c8d-1e2f3a4b5c6d");
+const item = category.getProgressItemFromReferenceID(referenceId);
 ```
 
 <HorizontalLine />
@@ -154,7 +156,7 @@ const item = category.getProgressItemFromReferenceID(referenceGuid);
 
 Gets a progress item that represents all the progress in this category, encapsulated as a single item.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -175,7 +177,7 @@ const overall = category.getOverallProgressItem();
 
 Gets the title of the progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -198,7 +200,7 @@ category.getTitle();
 
 Counts all progress items registered in this category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -221,7 +223,7 @@ category.getTotalJobs();
 
 Gets the cumulative progress value of the progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -244,7 +246,7 @@ category.getValue();
 
 Gets the icon of the progress category as a base64-encoded SVG.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -267,7 +269,7 @@ category.getIcon();
 
 Checks if the progress category has any pending jobs.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -290,7 +292,7 @@ category.hasPendingJobs();
 
 Checks if the progress category has any completed progress items.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -313,7 +315,7 @@ category.hasDoneJobs();
 
 Checks whether the progress category has a progress item that has been configured as unknown (indeterminate) progress.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -336,7 +338,7 @@ category.isIndeterminateProgress();
 
 Checks if the progress category can be cancelled.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -359,7 +361,7 @@ category.supportsCancellation();
 
 Cancels all jobs being reported under this progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -382,7 +384,7 @@ await category.cancelProgress();
 
 Removes the completed progress items from the progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -405,7 +407,7 @@ category.removeDoneJobs();
 
 Removes the cancelled and failed progress items from the progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -428,7 +430,7 @@ category.removeCancelledJobs();
 
 Removes the specified progress item from the progress category.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -453,7 +455,7 @@ category.removeProgressItem(item);
 
 Indicates that this progress category will only show the status column.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 
@@ -476,7 +478,7 @@ category.showOnlyStatusColumn();
 
 Indicates that this progress category will be shown in the header bar progress panel.
 
-Since: **26.5**
+Since: **27.0**
 
 #### Parameters
 

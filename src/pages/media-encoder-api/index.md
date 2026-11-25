@@ -31,9 +31,11 @@ const success = await app.RenderQueue.start();
 | Area | Use it to |
 | --- | --- |
 | [Render Queue](render-queue/index.md) | Add sources, inspect jobs, start or stop rendering, and subscribe to queue events |
-| [Render Options](render-options/index.md) | Choose presets, output paths, and work-area settings |
+| [Render Options](render-options/index.md) | Choose work-area settings, in and out points, rotation, and other render settings |
+| [Preset Manager](preset-manager/index.md) | Find export presets by format, name, or ID, and load preset files |
 | [Watch Folder](watch-folder/index.md) | Inspect and manage automatic encoding folders |
 | [TickTime](tick-time/index.md) | Represent precise time values used by render jobs and options |
+| [Guid](guid/index.md) | Create and convert the GUID objects that some methods expect |
 | [Progress Category Container](progress-category-container/index.md) | Group progress categories and report progress from a plugin |
 | [C2PAService](c2pa-service/index.md) | Work with Content Credentials settings and manifest locations |
 
