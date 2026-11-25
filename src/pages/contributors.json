@@ -1,7 +1,7 @@
 {
-  "total": 21,
+  "total": 22,
   "offset": 0,
-  "limit": 21,
+  "limit": 22,
   "data": [
     {
       "page": "/",
@@ -15,12 +15,12 @@
     {
       "page": "/config",
       "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/129856403?v=4",
         "https://avatars.githubusercontent.com/u/31863114?v=4",
-        "https://avatars.githubusercontent.com/u/123291197?v=4",
         "https://avatars.githubusercontent.com/u/14320591?v=4"
       ],
-      "lastUpdated": "11/10/2026"
+      "lastUpdated": "11/25/2026"
     },
     {
       "page": "/get-started/",
@@ -60,6 +60,13 @@
         "https://avatars.githubusercontent.com/u/123291197?v=4"
       ],
       "lastUpdated": "11/10/2026"
+    },
+    {
+      "page": "/media-encoder-api/changelog/",
+      "avatars": [
+        "https://avatars.githubusercontent.com/u/123291197?v=4"
+      ],
+      "lastUpdated": "11/25/2026"
     },
     {
       "page": "/media-encoder-api/guid/",
