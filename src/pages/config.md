@@ -6,6 +6,7 @@
     - [AME](index.md)
     - [Get Started](get-started/index.md)
     - [Media Encoder API](media-encoder-api/index.md)
+    - [API Changelog](media-encoder-api/changelog/index.md)
 
 - subPages:
   - [Overview](get-started/index.md)
@@ -45,3 +46,4 @@
   - [C2PAService](media-encoder-api/c2pa-service/index.md)
     - [Constants](media-encoder-api/c2pa-service/index.md#constants)
     - [Methods](media-encoder-api/c2pa-service/index.md#methods)
+  - [API Changelog](media-encoder-api/changelog/index.md)
